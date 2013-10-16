@@ -25,12 +25,12 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <razorqt/razorapplication.h>
+#include <lxqt/lxqtapplication.h>
 
 #include <glib-object.h>
 
 #include <qtxdg/xdgicon.h>
-#include <razorqt/razorsettings.h>
+#include <lxqt/lxqtsettings.h>
 #include "razortranslate.h"
 
 #include "policykitagent.h"
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 {
     g_type_init();
 
-    RazorApplication app(argc, argv);    
+    LxQt::Application app(argc, argv);    
     TRANSLATE_APP;
     
     app.setQuitOnLastWindowClosed(false);
