@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2011-2012 Razor team
@@ -33,7 +33,7 @@
 
 #include "ui_policykitagentgui.h"
 
-namespace RazorPolicykit
+namespace LxQtPolicykit
 {
     
 class PolicykitAgentGUI : public QDialog, public Ui::PolicykitAgentGUI

@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2011-2012 Razor team
@@ -36,7 +36,7 @@
 #include "policykitagentgui.h"
 
 
-namespace RazorPolicykit
+namespace LxQtPolicykit
 {
 
 PolicykitAgent::PolicykitAgent(QObject *parent)
@@ -45,7 +45,7 @@ PolicykitAgent::PolicykitAgent(QObject *parent)
       m_gui(0)
 {
     PolkitQt1::UnixSessionSubject session(getpid());
-    registerListener(session, "/org/razorqt/PolicyKit1/AuthenticationAgent");
+    registerListener(session, "/org/lxqt/PolicyKit1/AuthenticationAgent");
 }
 
 PolicykitAgent::~PolicykitAgent()

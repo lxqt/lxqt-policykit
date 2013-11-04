@@ -17,7 +17,7 @@
     </message>
 </context>
 <context>
-    <name>RazorPolicykit::PolicykitAgent</name>
+    <name>LxQtPolicykit::PolicykitAgent</name>
     <message>
         <source>PolicyKit Information</source>
         <translation type="unfinished"></translation>

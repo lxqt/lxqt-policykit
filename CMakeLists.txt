@@ -10,7 +10,7 @@ if (ENABLE_POLICYKIT)
 find_package(PolkitQt-1)
 
 if (NOT POLKITQT-1_LIB_DIR AND NOT POLKITQT-1_INCLUDE_DIR)
-    message(WARNING "Qt bindings for policykit are not found. Razor policykit integration won't be built")
+    message(WARNING "Qt bindings for policykit are not found. LxQt policykit integration won't be built")
     message(STATUS "Hint: package libpolkit-qt-1-devel on openSUSE")
 else ()
     project(lxqt-policykit-agent)
@@ -57,8 +57,8 @@ else ()
     )
 
     # Translations **********************************
-    include(RazorTranslate)
-    razor_translate_ts(lxqt-policykit-agent_QM_FILES
+    include(LxQtTranslate)
+    lxqt_translate_ts(lxqt-policykit-agent_QM_FILES
         SOURCES
             ${lxqt-policykit-agent_H}
             ${lxqt-policykit-agent_SRCS}

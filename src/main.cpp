@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2011-2012 Razor team
@@ -31,7 +31,7 @@
 
 #include <qtxdg/xdgicon.h>
 #include <lxqt/lxqtsettings.h>
-#include "razortranslate.h"
+#include "lxqttranslate.h"
 
 #include "policykitagent.h"
 
@@ -44,6 +44,6 @@ int main(int argc, char *argv[])
     
     app.setQuitOnLastWindowClosed(false);
 
-    RazorPolicykit::PolicykitAgent agent;
+    LxQtPolicykit::PolicykitAgent agent;
     return app.exec();
 }
