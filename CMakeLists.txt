@@ -36,7 +36,6 @@ else ()
     include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_BINARY_DIR}
-        ${CMAKE_SOURCE_DIR}/libraries
         ${POLKIT_AGENT_INCLUDE_DIRS}
         ${POLKITQT-1_INCLUDE_DIR}
     )
