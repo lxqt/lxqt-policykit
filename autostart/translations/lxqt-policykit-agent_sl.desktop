@@ -1,13 +1,2 @@
-[Desktop Entry]
-Type=Application
-Name=PolicyKit Handler
-TryExec=lxqt-policykit-agent
-Exec=lxqt-policykit-agent
-OnlyShowIn=LxQt;
-X-LxQt-Module=true
-
-#TRANSLATIONS_DIR=translations
-
-
 # Translations
 Name[sl]=Upravljalnik PolicyKit
