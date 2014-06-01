@@ -30,7 +30,7 @@
 #include <polkitagent/polkitagent.h>
 #include <polkitqt1-subject.h>
 
-#include <QtGui/QMessageBox>
+#include <QMessageBox>
 
 #include "policykitagent.h"
 #include "policykitagentgui.h"

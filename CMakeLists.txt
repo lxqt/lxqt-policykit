@@ -9,6 +9,8 @@ if (ENABLE_POLICYKIT)
 
 find_package(PolkitQt-1)
 
+option(USE_QT5 "Build with Qt5." $ENV{USE_QT5})
+
 if (NOT POLKITQT-1_LIB_DIR AND NOT POLKITQT-1_INCLUDE_DIR)
     message(WARNING "Qt bindings for policykit are not found. LxQt policykit integration won't be built")
     message(STATUS "Hint: package libpolkit-qt-1-devel on openSUSE")
@@ -18,16 +20,36 @@ else ()
     message(STATUS "PolkitQt-1: ${POLKITQT-1_VERSION_STRING}")
     message(STATUS "      libs: ${POLKITQT-1_CORE_LIBRARY} ${POLKITQT-1_AGENT_LIBRARY}")
     message(STATUS "   include: ${POLKITQT-1_INCLUDE_DIR}")
-    
+
     find_package(PkgConfig)
     pkg_check_modules(POLKIT_AGENT REQUIRED polkit-agent-1)
     message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRARIES}")
 
-    # lxde-qt tools for cmake
-    find_package(LXQT REQUIRED )
-    include(${LXQT_USE_FILE})
+    set(CMAKE_INCLUDE_CURRENT_DIR ON)
+    set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+    if(USE_QT5)
+        find_package(Qt5Widgets REQUIRED QUIET)
+        find_package(Qt5LinguistTools REQUIRED QUIET)
 
-    find_package(QTXDG REQUIRED QUIET)
+        find_package(lxqt-qt5 REQUIRED QUIET)
+        include(${LXQT_USE_FILE})
+
+        find_package(qt5xdg REQUIRED QUIET)
+
+        set(QTX_INCLUDE_DIRS ${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR})
+        set(QTX_LIBRARIES ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
+    else()
+        find_package(Qt4 REQUIRED)
+        include(${QT_USE_FILE})
+
+        find_package(LXQT REQUIRED)
+        include(${LXQT_USE_FILE})
+
+        find_package(QTXDG REQUIRED QUIET)
+
+        set(QTX_INCLUDE_DIRS ${Qt5Widgets_INCLUDE_DIR})
+        set(QTX_LIBRARIES ${Qt5Widgets_LIBRARY})
+    endif()
     include(${QTXDG_USE_FILE})
 
     # TODO/FIXME: pkg-config for hardcoded paths
@@ -38,6 +60,7 @@ else ()
         ${CMAKE_CURRENT_BINARY_DIR}
         ${POLKIT_AGENT_INCLUDE_DIRS}
         ${POLKITQT-1_INCLUDE_DIR}
+        ${QTX_INCLUDE_DIR}
     )
 
     set(lxqt-policykit-agent_SRCS
@@ -64,9 +87,14 @@ else ()
             ${lxqt-policykit-agent_UI}
     )
     #************************************************
-    
-    QT4_WRAP_CPP(lxqt-policykit-agent_MOCS ${lxqt-policykit-agent_H})
-    QT4_WRAP_UI(lxqt-policykit-agent_UI_CPP ${lxqt-policykit-agent_UI})
+
+    if(USE_QT4)
+        qt4_wrap_cpp(lxqt-policykit-agent_MOCS ${lxqt-policykit-agent_H})
+        qt4_wrap_ui(lxqt-policykit-agent_UI_CPP ${lxqt-policykit-agent_UI})
+    elseif(USE_QT5)
+        qt5_wrap_cpp(lxqt-policykit-agent_MOCS ${lxqt-policykit-agent_H})
+        qt5_wrap_ui(lxqt-policykit-agent_UI_CPP ${lxqt-policykit-agent_UI})
+    endif()
 
     add_executable(lxqt-policykit-agent
         ${lxqt-policykit-agent_SRCS}
@@ -76,15 +104,14 @@ else ()
     )
 
     target_link_libraries(lxqt-policykit-agent
-        ${QT_QTCORE_LIBRARY}
-        ${QT_QTGUI_LIBRARY}
+        ${QTX_LIBRARY}
         ${QTXDG_LIBRARY}
         ${LXQT_LIBRARIES}
         ${POLKITQT-1_CORE_LIBRARY}
         ${POLKITQT-1_AGENT_LIBRARY}
         ${POLKIT_AGENT_LIBRARIES}
     )
-    
+
     # install
     install(TARGETS lxqt-policykit-agent DESTINATION bin)
 

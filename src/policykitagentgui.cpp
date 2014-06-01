@@ -25,8 +25,7 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
  
-#include <qtxdg/xdgicon.h>
-
+#include <XdgIcon>
 #include "policykitagentgui.h"
 
 namespace LxQtPolicykit
