@@ -35,10 +35,8 @@
 #include <polkitqt1-details.h>
 #include <polkitqt1-agent-listener.h>
 
-#include <QtGui/QApplication>
-#include <QtCore/QHash>
-
-
+#include <QApplication>
+#include <QHash>
 
 namespace LxQtPolicykit
 {
