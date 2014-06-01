@@ -25,12 +25,12 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <lxqt/lxqtapplication.h>
+#include <LXQt/Application>
 
 #include <glib-object.h>
 
-#include <qtxdg/xdgicon.h>
-#include <lxqt/lxqtsettings.h>
+#include <XdgIcon>
+#include <LXQt/Settings>
 #include "lxqttranslate.h"
 
 #include "policykitagent.h"
