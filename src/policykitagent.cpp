@@ -28,7 +28,7 @@
 #define POLKIT_AGENT_I_KNOW_API_IS_SUBJECT_TO_CHANGE 1
 
 #include <polkitagent/polkitagent.h>
-#include <polkitqt1-subject.h>
+#include <PolkitQt1/Subject>
 
 #include <QMessageBox>
 
@@ -66,7 +66,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
                                             const PolkitQt1::Identity::List &identities,
                                             PolkitQt1::Agent::AsyncResult *result)
 {
-    if (m_inProgress) 
+    if (m_inProgress)
     {
         QMessageBox::information(0, tr("PolicyKit Information"), "Another authentization in progress. Please try it again later");
         return;
@@ -79,7 +79,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
         delete m_gui;
         m_gui = 0;
     }
-    m_gui = new PolicykitAgentGUI(actionId, message, iconName, details, identities); 
+    m_gui = new PolicykitAgentGUI(actionId, message, iconName, details, identities);
 
     foreach (PolkitQt1::Identity i, identities)
     {
@@ -126,7 +126,7 @@ void PolicykitAgent::completed(bool gainedAuthorization)
 {
     PolkitQt1::Agent::Session * session = qobject_cast<PolkitQt1::Agent::Session *>(sender());
     Q_ASSERT(session);
-    
+
     if (!gainedAuthorization)
     {
         QMessageBox::information(0, tr("Authorization Failed"), tr("Authorization failed for some reason"));
@@ -135,7 +135,7 @@ void PolicykitAgent::completed(bool gainedAuthorization)
     session->result()->setCompleted();
 
     delete session;
-    
+
     m_inProgress = false;
 }
 

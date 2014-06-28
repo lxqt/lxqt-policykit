@@ -28,14 +28,14 @@
 #ifndef POLICYKITAGENTGUI_H
 #define POLICYKITAGENTGUI_H
 
-#include <polkitqt1-details.h>
-#include <polkitqt1-identity.h>
+#include <PolkitQt1/Details>
+#include <PolkitQt1/Identity>
 
 #include "ui_policykitagentgui.h"
 
 namespace LxQtPolicykit
 {
-    
+
 class PolicykitAgentGUI : public QDialog, public Ui::PolicykitAgentGUI
 {
     Q_OBJECT
@@ -54,7 +54,7 @@ public:
 private:
     QHash<QString,PolkitQt1::Identity> m_identityMap;
 };
-    
+
 } // namespace
 
 #endif
