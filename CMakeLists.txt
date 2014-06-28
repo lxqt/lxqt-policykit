@@ -1,22 +1,23 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.9)
+project(lxqt-policykit-agent)
 
 # additional cmake files
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-OPTION(ENABLE_POLICYKIT "Enable policykit integration" ON)
-
-if (ENABLE_POLICYKIT)
-
-find_package(PolkitQt-1)
-
+# Support different versions of Qt
 option(USE_QT5 "Build with Qt5." $ENV{USE_QT5})
+
+# find Qt binding of polkit
+if(USE_QT5)
+    find_package(PolkitQt5-1) # Qt5 version
+else()
+    find_package(PolkitQt-1) # Qt4 version
+endif()
 
 if (NOT POLKITQT-1_LIB_DIR AND NOT POLKITQT-1_INCLUDE_DIR)
     message(WARNING "Qt bindings for policykit are not found. LxQt policykit integration won't be built")
     message(STATUS "Hint: package libpolkit-qt-1-devel on openSUSE")
 else ()
-    project(lxqt-policykit-agent)
-
     message(STATUS "PolkitQt-1: ${POLKITQT-1_VERSION_STRING}")
     message(STATUS "      libs: ${POLKITQT-1_CORE_LIBRARY} ${POLKITQT-1_AGENT_LIBRARY}")
     message(STATUS "   include: ${POLKITQT-1_INCLUDE_DIR}")
@@ -27,29 +28,23 @@ else ()
 
     set(CMAKE_INCLUDE_CURRENT_DIR ON)
     set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+    set(CMAKE_AUTOMOC ON)
     if(USE_QT5)
         find_package(Qt5Widgets REQUIRED QUIET)
         find_package(Qt5LinguistTools REQUIRED QUIET)
-
         find_package(lxqt-qt5 REQUIRED QUIET)
-        include(${LXQT_USE_FILE})
-
         find_package(qt5xdg REQUIRED QUIET)
-
         set(QTX_INCLUDE_DIRS ${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR})
         set(QTX_LIBRARIES ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
     else()
         find_package(Qt4 REQUIRED)
         include(${QT_USE_FILE})
-
         find_package(LXQT REQUIRED)
-        include(${LXQT_USE_FILE})
-
         find_package(QTXDG REQUIRED QUIET)
-
         set(QTX_INCLUDE_DIRS ${Qt5Widgets_INCLUDE_DIR})
         set(QTX_LIBRARIES ${Qt5Widgets_LIBRARY})
     endif()
+    include(${LXQT_USE_FILE})
     include(${QTXDG_USE_FILE})
 
     # TODO/FIXME: pkg-config for hardcoded paths
@@ -88,12 +83,10 @@ else ()
     )
     #************************************************
 
-    if(USE_QT4)
-        qt4_wrap_cpp(lxqt-policykit-agent_MOCS ${lxqt-policykit-agent_H})
-        qt4_wrap_ui(lxqt-policykit-agent_UI_CPP ${lxqt-policykit-agent_UI})
-    elseif(USE_QT5)
-        qt5_wrap_cpp(lxqt-policykit-agent_MOCS ${lxqt-policykit-agent_H})
+    if(USE_QT5)
         qt5_wrap_ui(lxqt-policykit-agent_UI_CPP ${lxqt-policykit-agent_UI})
+    else()
+        qt4_wrap_ui(lxqt-policykit-agent_UI_CPP ${lxqt-policykit-agent_UI})
     endif()
 
     add_executable(lxqt-policykit-agent
@@ -116,8 +109,6 @@ else ()
     install(TARGETS lxqt-policykit-agent DESTINATION bin)
 
 endif()
-
-endif (ENABLE_POLICYKIT)
 
 # building tarball with CPack -------------------------------------------------
 include (InstallRequiredSystemLibraries)
