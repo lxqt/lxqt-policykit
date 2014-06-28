@@ -29,7 +29,7 @@
 
 #include <glib-object.h>
 
-#include <qtxdg/xdgicon.h>
+#include <XdgIcon>
 #include <LXQt/Settings>
 #include "lxqttranslate.h"
 
