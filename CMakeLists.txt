@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(lxqt-policykit-agent)
 
-# additional cmake files
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 find_package(PkgConfig)
 pkg_check_modules(POLKIT_AGENT REQUIRED polkit-agent-1)
@@ -23,6 +22,8 @@ set(QTX_LIBRARIES ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
 
 include(${LXQT_USE_FILE})
 include(${QTXDG_USE_FILE})
+
+include(LXQtTranslate)
 
 # Deal with a bug in polkit-qt5
 if (NOT IS_ABSOLUTE "${POLKITQT-1_INCLUDE_DIR}")
@@ -61,12 +62,18 @@ set(lxqt-policykit-agent_UI
 )
 
 # Translations
-include(LxQtTranslate)
-lxqt_translate_ts(lxqt-policykit-agent_QM_FILES SOURCES
-    ${lxqt-policykit-agent_H}
-    ${lxqt-policykit-agent_SRCS}
-    ${lxqt-policykit-agent_UI}
+lxqt_translate_ts(lxqt-policykit-agent_QM_FILES
+    UPDATE_TRANSLATIONS
+        ${UPDATE_TRANSLATIONS}
+    SOURCES
+        ${lxqt-policykit-agent_H}
+        ${lxqt-policykit-agent_SRCS}
+        ${lxqt-policykit-agent_UI}
+    INSTALL_DIR
+        "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
 )
+
+lxqt_app_translation_loader(QM_LOADER ${PROJECT_NAME})
 
 qt5_wrap_ui(lxqt-policykit-agent_UI_CPP ${lxqt-policykit-agent_UI})
 
@@ -75,6 +82,7 @@ add_executable(lxqt-policykit-agent
     ${lxqt-policykit-agent_MOCS}
     ${lxqt-policykit-agent_UI_CPP}
     ${lxqt-policykit-agent_QM_FILES}
+    ${QM_LOADER}
 )
 
 target_link_libraries(lxqt-policykit-agent

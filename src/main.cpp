@@ -31,7 +31,6 @@
 
 #include <XdgIcon>
 #include <LXQt/Settings>
-#include "lxqttranslate.h"
 
 #include "policykitagent.h"
 
@@ -42,7 +41,6 @@ int main(int argc, char *argv[])
 #endif
 
     LxQt::Application app(argc, argv);    
-    TRANSLATE_APP;
     
     app.setQuitOnLastWindowClosed(false);
 
