@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 2.8.11)
 project(lxqt-policykit-agent)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
@@ -16,9 +16,6 @@ find_package(Qt5Widgets REQUIRED QUIET)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 find_package(lxqt-qt5 REQUIRED QUIET)
 find_package(qt5xdg REQUIRED QUIET)
-
-set(QTX_INCLUDE_DIRS ${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR})
-set(QTX_LIBRARIES ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
 
 include(${LXQT_USE_FILE})
 include(${QTXDG_USE_FILE})
@@ -86,7 +83,7 @@ add_executable(lxqt-policykit-agent
 )
 
 target_link_libraries(lxqt-policykit-agent
-    ${QTX_LIBRARY}
+    Qt5::Widgets
     ${QTXDG_LIBRARY}
     ${LXQT_LIBRARIES}
     ${POLKITQT-1_CORE_LIBRARY}
