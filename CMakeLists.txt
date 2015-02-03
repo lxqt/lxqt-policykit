@@ -7,6 +7,8 @@ find_package(PkgConfig)
 pkg_check_modules(POLKIT_AGENT REQUIRED polkit-agent-1)
 message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRARIES}")
 
+set(POLKIT_AGENT_BINARY_DIR "bin" CACHE FILEPATH "Directory for install polkit agent")
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
@@ -92,7 +94,7 @@ target_link_libraries(lxqt-policykit-agent
 )
 
 # install
-install(TARGETS lxqt-policykit-agent DESTINATION bin)
+install(TARGETS lxqt-policykit-agent DESTINATION ${POLKIT_AGENT_BINARY_DIR})
 
 # building tarball with CPack -------------------------------------------------
 include(InstallRequiredSystemLibraries)
