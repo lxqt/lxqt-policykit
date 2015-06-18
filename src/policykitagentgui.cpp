@@ -24,7 +24,7 @@
  * Boston, MA 02110-1301 USA
  *
  * END_COMMON_COPYRIGHT_HEADER */
- 
+
 #include <XdgIcon>
 #include "policykitagentgui.h"
 
@@ -45,7 +45,7 @@ PolicykitAgentGUI::PolicykitAgentGUI(const QString &actionId,
 
     messageLabel->setText(message);
     iconLabel->setPixmap(XdgIcon::fromTheme(iconName).pixmap(64, 64));
-    
+
     foreach (PolkitQt1::Identity identity, identities)
     {
         m_identityMap[identity.toString()] = identity;

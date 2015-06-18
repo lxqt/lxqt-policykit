@@ -40,8 +40,8 @@ int main(int argc, char *argv[])
     g_type_init();
 #endif
 
-    LxQt::Application app(argc, argv);    
-    
+    LxQt::Application app(argc, argv);
+
     app.setQuitOnLastWindowClosed(false);
 
     LxQtPolicykit::PolicykitAgent agent;
