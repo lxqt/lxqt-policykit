@@ -68,7 +68,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
 {
     if (m_inProgress)
     {
-        QMessageBox::information(0, tr("PolicyKit Information"), "Another authentization in progress. Please try it again later");
+        QMessageBox::information(0, tr("PolicyKit Information"), tr("Another authentization in progress. Please try it again later."));
         return;
     }
     m_inProgress = true;
