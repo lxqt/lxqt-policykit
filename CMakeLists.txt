@@ -12,6 +12,7 @@ set(POLKIT_AGENT_BINARY_DIR "bin" CACHE FILEPATH "Directory for install polkit a
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
 
 find_package(PolkitQt5-1 REQUIRED)
 find_package(Qt5Widgets REQUIRED QUIET)
@@ -70,12 +71,9 @@ lxqt_translate_ts(lxqt-policykit-agent_QM_FILES
 
 lxqt_app_translation_loader(QM_LOADER ${PROJECT_NAME})
 
-qt5_wrap_ui(lxqt-policykit-agent_UI_CPP ${lxqt-policykit-agent_UI})
-
 add_executable(lxqt-policykit-agent
     ${lxqt-policykit-agent_SRCS}
     ${lxqt-policykit-agent_MOCS}
-    ${lxqt-policykit-agent_UI_CPP}
     ${lxqt-policykit-agent_QM_FILES}
     ${QM_LOADER}
 )
