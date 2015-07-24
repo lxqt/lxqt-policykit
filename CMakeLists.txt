@@ -87,7 +87,11 @@ target_link_libraries(lxqt-policykit-agent
 )
 
 # install
-install(TARGETS lxqt-policykit-agent DESTINATION ${POLKIT_AGENT_BINARY_DIR})
+install(TARGETS
+    lxqt-policykit-agent
+    DESTINATION "${POLKIT_AGENT_BINARY_DIR}"
+    COMPONENT Runtime
+)
 
 # building tarball with CPack -------------------------------------------------
 include(InstallRequiredSystemLibraries)
