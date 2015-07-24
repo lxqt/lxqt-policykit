@@ -36,8 +36,6 @@ message(STATUS "   include: ${POLKITQT-1_INCLUDE_DIR}")
 # pkg-config --cflags glib-2.0
 # pkg-config --cflags polkit-agent-1
 include_directories(
-    "${CMAKE_CURRENT_SOURCE_DIR}/src"
-    "${CMAKE_CURRENT_BINARY_DIR}"
     ${POLKIT_AGENT_INCLUDE_DIRS}
     "${POLKITQT-1_INCLUDE_DIR}"
 )
