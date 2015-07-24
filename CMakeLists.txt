@@ -3,11 +3,13 @@ project(lxqt-policykit-agent)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
+include(GNUInstallDirs)
+
 find_package(PkgConfig)
 pkg_check_modules(POLKIT_AGENT REQUIRED polkit-agent-1)
 message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRARIES}")
 
-set(POLKIT_AGENT_BINARY_DIR "bin" CACHE FILEPATH "Directory for install polkit agent")
+set(POLKIT_AGENT_BINARY_DIR "${CMAKE_INSTALL_BINDIR}" CACHE FILEPATH "Directory for install polkit agent")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
