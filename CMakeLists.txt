@@ -21,6 +21,7 @@ find_package(Qt5Widgets REQUIRED QUIET)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 find_package(lxqt REQUIRED QUIET)
 
+include(LXQtCompilerSettings)
 include(LXQtTranslate)
 
 # Deal with a bug in polkit-qt5
