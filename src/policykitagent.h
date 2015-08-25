@@ -38,7 +38,7 @@
 #include <QApplication>
 #include <QHash>
 
-namespace LxQtPolicykit
+namespace LXQtPolicykit
 {
 
 class PolicykitAgentGUI;

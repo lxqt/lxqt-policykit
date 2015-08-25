@@ -36,7 +36,7 @@
 #include "policykitagentgui.h"
 
 
-namespace LxQtPolicykit
+namespace LXQtPolicykit
 {
 
 PolicykitAgent::PolicykitAgent(QObject *parent)

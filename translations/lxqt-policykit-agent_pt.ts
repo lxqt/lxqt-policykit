@@ -17,7 +17,7 @@
     </message>
 </context>
 <context>
-    <name>LxQtPolicykit::PolicykitAgent</name>
+    <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
         <source>PolicyKit Information</source>
         <translation>Informaçoes PolicyKit</translation>

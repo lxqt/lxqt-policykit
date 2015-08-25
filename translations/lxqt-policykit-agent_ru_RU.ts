@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
-    <name>LxQtPolicykit::PolicykitAgent</name>
+    <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
         <source>PolicyKit Information</source>
         <translation>Информация PolicyKit</translation>

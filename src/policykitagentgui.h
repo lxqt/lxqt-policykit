@@ -33,7 +33,7 @@
 
 #include "ui_policykitagentgui.h"
 
-namespace LxQtPolicykit
+namespace LXQtPolicykit
 {
 
 class PolicykitAgentGUI : public QDialog, public Ui::PolicykitAgentGUI

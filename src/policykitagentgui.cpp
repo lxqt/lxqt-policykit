@@ -28,7 +28,7 @@
 #include <XdgIcon>
 #include "policykitagentgui.h"
 
-namespace LxQtPolicykit
+namespace LXQtPolicykit
 {
 
 

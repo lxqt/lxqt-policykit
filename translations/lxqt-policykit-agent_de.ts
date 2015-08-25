@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de">
 <context>
-    <name>LxQtPolicykit::PolicykitAgent</name>
+    <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
         <location filename="../src/policykitagent.cpp" line="71"/>
         <location filename="../src/policykitagent.cpp" line="149"/>
