@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.1" language="hu">
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
@@ -12,7 +12,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Már fut egy más hitelesítő.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="132"/>
