@@ -7,7 +7,7 @@
         <location filename="../../../src/policykitagent.cpp" line="71"/>
         <location filename="../../../src/policykitagent.cpp" line="149"/>
         <source>PolicyKit Information</source>
-        <translation>Πληροφορίες PolicyKit</translation>
+        <translation>Πληροφορίες του PolicyKit</translation>
     </message>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../../../src/policykitagent.cpp" line="144"/>
         <source>PolicyKit Error</source>
-        <translation>Σφάλμα PolicyKit</translation>
+        <translation>Σφάλμα του PolicyKit</translation>
     </message>
 </context>
 <context>
