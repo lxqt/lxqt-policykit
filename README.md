@@ -4,23 +4,13 @@
 
 lxqt-policykit is the polkit authentification agent of LXQt.
 
-[polkit](https://www.freedesktop.org/wiki/Software/polkit/) is a software framework to handle privileges of processes.
-In LXQt it is e. g. used to extend the privileges of the GUI tools of [lxqt-admin](https://github.com/lxde/lxqt-admin/).
-These are launched by a regular user. But in order to apply the settings that can be adjusted root privileges are needed
-and acquired via polkit.   
+[polkit](https://www.freedesktop.org/wiki/Software/polkit/) is a software framework to handle privileges of processes.   
+In LXQt it is e. g. used to extend the privileges of the GUI tools of [lxqt-admin](https://github.com/lxde/lxqt-admin/). These are launched by a regular user. But in order to apply the settings they deal with root privileges are needed and acquired via polkit.   
+Among the various components of polkit the authentication agent is the one to query the user for credentials by dialogue windows like this one of lxqt-policykit.   
+![lxqt-policykit: GUI](lxqt-policykit_gui.png)   
+While there's only a single implementation of all other polkit components various different authentication agents are provided by the various desktop environments. Basically these can be used interchangeably, that is lxqt-policykit can be used in an LXDE session or lxpolkit, the authentication agent of LXDE, can be used in an Xfce session. Most of the time it's better to use the implementation provided by a distinct desktop environment as it integrates better, though.   
 
-Among the various components of polkit the authentication agent is the one to query the user for credentials and hence
-comes with its own GUI like this one of lxqt-policykit.
-
-![lxqt-policykit: GUI](lxqt-policykit_gui.png)
-
-While there's only a single implementation of all other polkit components there are various different authentication
-agents provided by the various desktop environments. Normally these can be used interchangeably, that is lxqt-policykit
-can be used in an LXDE session or lxpolkit, the authentication agent of LXDE, can be used in an Xfce session. Normally
-it's better to use the implementation provided by a distinct desktop environment as it integrates better, though.
-
-Technically, lxqt-policykit is just a single binary `lxqt-policykit-agent` which has to be running all over the LXQt
-sessions and is therefor launched as so-called LXQt Module, see [Configuration](#configuration).
+Technically, lxqt-policykit is just a single binary `lxqt-policykit-agent` which is running as [LXQt Module](https://github.com/lxde/lxqt-session#lxqt-modules) and launching the GUI on demand.
 
 Note that the naming lxqt-policykit is strictly speaking an anachronism. It refers to Policykit which was the predecessor
 of polkit. The name wasn't changed when Policykit was replaced by polkit as both provide roughly the same features albeit
@@ -30,14 +20,12 @@ they are technically different.
 
 ### Compiling sources
 
-Runtime dependencies are [liblxqt](https://github.com/lxde/liblxqt) and its dependency
-[libqtxdg](https://github.com/lxde/libqtxdg) as well as polkit-qt5, to build Git and CMake are needed in addition.   
-By default lxqt-policykit is pulling translations from repository [translations](https://github.com/lxde/translations/) at
-compile time, see file README.md of the latter.
+Runtime dependencies are polkit-qt5 and [liblxqt](https://github.com/lxde/liblxqt).   
+Additional build dependencies are CMake and optionally Git to pull latest VCS checkouts. The localization files were outsourced to repository [lxqt-l10n](https://github.com/lxde/lxqt-l10n) so the corresponding dependencies are needed, too. Please refer to this repository's `README.md` for further information.   
 
-To compile, run `cmake`, `make` and `make install`.
-`cmake` can be invoked in an out of source build directory and will normally need variable `-DCMAKE_INSTALL_PREFIX=/usr`.
-`make install` can be invoked with `DESTDIR=<some path>`.
+Code configuration is handled by CMake. CMake variable `CMAKE_INSTALL_PREFIX` has to be set to `/usr` on most operating systems.   
+
+To build run `make`, to install `make install` which accepts variable `DESTDIR` as usual.   
 
 ### Binary packages
 
@@ -60,16 +48,8 @@ Package `lxqt-policykit` is available as of Fedora 22.
 Package `lxqt-policykit` is providing the binary, `lxqt-policykit-lang` the translations. Both are available as of
 openSUSE Leap 42.1.
 
-## Configuration
+## Configuration, Usage
 
-As mentioned in section [Overview](#overview) binary `lxqt-policykit-agent` is started as LXQt Module, which is a particular
-way of LXQt to launch binaries at the beginning of an LXQt session and keep them running all the time.   
-This is handled by desktop entry file `/etc/xdg/autostart/lxqt-policykit-agent.desktop`. It belongs to
-[lxqt-common](https://github.com/lxde/lxqt-common/) and is featuring key `OnlyShowIn=LXQt;` restricting it to LXQt sessions.
-So no further action has to be taken as far as LXQt is concerned. In order to use lxqt-policykit in other sessions the key has
-to be modified accordingly and/or removed, optionally after copying the file to a user specific directory, normally
-`~/.config/autostart/`.
-
-## Usage
+Like all LXQt Modules `lxqt-policykit-agent` can be adjusted from section "Basic Settings" in configuration dialogue [LXQt Session Settings](https://github.com/lxde/lxqt-session#lxqt-session-settings) of [lxqt-session](https://github.com/lxde/lxqt-session).
 
 From a user's point of view the usage is limited to interacting with the GUI as seen above.
