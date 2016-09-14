@@ -116,27 +116,36 @@ void PolicykitAgent::request(const QString &request, bool echo)
 
     PolkitQt1::Identity identity = m_SessionIdentity[session];
     m_gui->setPrompt(identity, request, echo);
-    if (m_gui->exec())
-        session->setResponse(m_gui->response());
-    else
-        session->setResponse("");
+    connect(m_gui, &QDialog::finished, [this, session] (int result)
+    {
+        if (result == QDialog::Accepted && m_gui->identity().toString() == m_SessionIdentity[session].toString())
+            session->setResponse(m_gui->response());
+        else
+            session->cancel();
+    });
+    m_gui->show();
 }
 
 void PolicykitAgent::completed(bool gainedAuthorization)
 {
     PolkitQt1::Agent::Session * session = qobject_cast<PolkitQt1::Agent::Session *>(sender());
     Q_ASSERT(session);
+    Q_ASSERT(m_gui);
 
-    if (!gainedAuthorization)
+    if (m_gui->identity().toString() == m_SessionIdentity[session].toString())
     {
-        QMessageBox::information(0, tr("Authorization Failed"), tr("Authorization failed for some reason"));
+        if (!gainedAuthorization)
+        {
+            QMessageBox::information(0, tr("Authorization Failed"), tr("Authorization failed for some reason"));
+        }
+
+        // Note: the setCompleted() must be called exacly once (as the
+        // AsyncResult is shared by all the sessions)
+        session->result()->setCompleted();
+        m_inProgress = false;
     }
 
-    session->result()->setCompleted();
-
     delete session;
-
-    m_inProgress = false;
 }
 
 void PolicykitAgent::showError(const QString &text)
