@@ -118,7 +118,7 @@ void PolicykitAgent::request(const QString &request, bool echo)
     m_gui->setPrompt(identity, request, echo);
     connect(m_gui, &QDialog::finished, [this, session] (int result)
     {
-        if (result == QDialog::Accepted && m_gui->identity().toString() == m_SessionIdentity[session].toString())
+        if (result == QDialog::Accepted && m_gui->identity() == m_SessionIdentity[session].toString())
             session->setResponse(m_gui->response());
         else
             session->cancel();
@@ -132,7 +132,7 @@ void PolicykitAgent::completed(bool gainedAuthorization)
     Q_ASSERT(session);
     Q_ASSERT(m_gui);
 
-    if (m_gui->identity().toString() == m_SessionIdentity[session].toString())
+    if (m_gui->identity() == m_SessionIdentity[session].toString())
     {
         if (!gainedAuthorization)
         {

@@ -40,6 +40,13 @@ class PolicykitAgentGUI : public QDialog, public Ui::PolicykitAgentGUI
 {
     Q_OBJECT
 
+private:
+    enum DataRoles
+    {
+        RolePromptText = Qt::UserRole
+            , RolePromptEcho
+    };
+
 public:
     PolicykitAgentGUI(const QString &actionId,
                       const QString &message,
@@ -48,11 +55,14 @@ public:
                       const PolkitQt1::Identity::List &identities);
 
     void setPrompt(const PolkitQt1::Identity &identity, const QString &text, bool echo);
-    PolkitQt1::Identity identity();
+    /*! \brief Returns currently selected identity (serialized by toString())
+     */
+    QString identity();
     QString response();
 
-private:
-    QHash<QString,PolkitQt1::Identity> m_identityMap;
+public slots:
+    void onIdentityChanged(int index);
+
 };
 
 } // namespace
