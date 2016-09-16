@@ -47,10 +47,18 @@ PolicykitAgentGUI::PolicykitAgentGUI(const QString &actionId,
     messageLabel->setText(message);
     iconLabel->setPixmap(XdgIcon::fromTheme(iconName).pixmap(64, 64));
 
+    const uid_t current_uid = getuid();
+    int current_user_index = -1;
     foreach (PolkitQt1::Identity identity, identities)
     {
+        const int i = identityComboBox->count(); // index of the added item
         identityComboBox->addItem(identity.toString());
+        PolkitQt1::UnixUserIdentity const * const u_id = static_cast<PolkitQt1::UnixUserIdentity *>(&identity);
+        if (u_id != nullptr && u_id->uid() == current_uid)
+            current_user_index = i;
     }
+    if (current_user_index != -1)
+        identityComboBox->setCurrentIndex(current_user_index);
     connect(identityComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PolicykitAgentGUI::onIdentityChanged);
     passwordEdit->setFocus(Qt::OtherFocusReason);
 }
