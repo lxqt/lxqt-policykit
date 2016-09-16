@@ -25,7 +25,7 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <XdgIcon>
+#include <QIcon>
 #include "policykitagentgui.h"
 #include <unistd.h>
 
@@ -45,7 +45,10 @@ PolicykitAgentGUI::PolicykitAgentGUI(const QString &actionId,
     Q_UNUSED(details); // it seems too confusing for end user (=me)
 
     messageLabel->setText(message);
-    iconLabel->setPixmap(XdgIcon::fromTheme(iconName).pixmap(64, 64));
+    QIcon icon = QIcon::fromTheme(iconName);
+    if (icon.isNull())
+        icon = QIcon::fromTheme(QLatin1String("dialog-question"));
+    iconLabel->setPixmap(icon.pixmap(64, 64));
 
     const uid_t current_uid = getuid();
     int current_user_index = -1;
