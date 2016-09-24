@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pt">
+<TS version="2.0" language="pt">
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
@@ -12,7 +12,7 @@
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Já está em curso uma autorização. Por favor tente mais tarde.</translation>
     </message>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="132"/>
