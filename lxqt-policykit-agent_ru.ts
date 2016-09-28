@@ -33,17 +33,17 @@
 <context>
     <name>PolicykitAgentGUI</name>
     <message>
-        <location filename="../../../src/policykitagentgui.ui" line="14"/>
+        <location filename="src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
         <translation>Требуется аутентификация</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagentgui.ui" line="55"/>
+        <location filename="src/policykitagentgui.ui" line="55"/>
         <source>Identity:</source>
         <translation>Идентификация:</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagentgui.ui" line="65"/>
+        <location filename="src/policykitagentgui.ui" line="65"/>
         <source>Password:</source>
         <translation>Пароль:</translation>
     </message>
