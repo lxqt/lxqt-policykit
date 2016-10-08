@@ -5,24 +5,32 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 
 include(GNUInstallDirs)
 
+set(LXQTBT_MINIMUM_VERSION "0.1.0")
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+find_package(PolkitQt5-1 REQUIRED)
+find_package(Qt5Widgets REQUIRED QUIET)
+find_package(Qt5LinguistTools REQUIRED QUIET)
+find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+find_package(lxqt REQUIRED QUIET)
 find_package(PkgConfig)
+
+include(LXQtCompilerSettings NO_POLICY_SCOPE)
+include(LXQtTranslate)
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
 pkg_check_modules(POLKIT_AGENT REQUIRED polkit-agent-1)
 message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRARIES}")
 
 set(POLKIT_AGENT_BINARY_DIR "${CMAKE_INSTALL_BINDIR}" CACHE FILEPATH "Directory for install polkit agent")
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-
-find_package(PolkitQt5-1 REQUIRED)
-find_package(Qt5Widgets REQUIRED QUIET)
-find_package(Qt5LinguistTools REQUIRED QUIET)
-find_package(lxqt REQUIRED QUIET)
-
-include(LXQtCompilerSettings NO_POLICY_SCOPE)
-include(LXQtTranslate)
 
 # Deal with a bug in polkit-qt5
 if (NOT IS_ABSOLUTE "${POLKITQT-1_INCLUDE_DIR}")
