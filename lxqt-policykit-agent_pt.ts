@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pt">
+<TS version="2.1" language="pt">
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
         <location filename="../../../src/policykitagent.cpp" line="149"/>
         <source>PolicyKit Information</source>
-        <translation>Informaçoes PolicyKit</translation>
+        <translation>Informações PolicyKit</translation>
     </message>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../../../src/policykitagentgui.ui" line="65"/>
         <source>Password:</source>
-        <translation>Senha:</translation>
+        <translation>Palavra-passe:</translation>
     </message>
 </context>
 </TS>
