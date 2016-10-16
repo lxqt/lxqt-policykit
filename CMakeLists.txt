@@ -1,9 +1,15 @@
 cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
+
 project(lxqt-policykit-agent)
 
-option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
-
 include(GNUInstallDirs)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 find_package(PkgConfig)
 pkg_check_modules(POLKIT_AGENT REQUIRED polkit-agent-1)
@@ -11,18 +17,14 @@ message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRAR
 
 set(POLKIT_AGENT_BINARY_DIR "${CMAKE_INSTALL_BINDIR}" CACHE FILEPATH "Directory for install polkit agent")
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-
 find_package(PolkitQt5-1 REQUIRED)
-find_package(Qt5Widgets REQUIRED QUIET)
 find_package(Qt5LinguistTools REQUIRED QUIET)
-find_package(lxqt REQUIRED QUIET)
+find_package(Qt5Widgets REQUIRED)
+message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
+
+find_package(lxqt REQUIRED)
 
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
-include(LXQtTranslate)
 
 # Deal with a bug in polkit-qt5
 if (NOT IS_ABSOLUTE "${POLKITQT-1_INCLUDE_DIR}")
@@ -58,7 +60,9 @@ set(lxqt-policykit-agent_UI
     src/policykitagentgui.ui
 )
 
-# Translations
+# Translations **********************************
+include(LXQtTranslate)
+
 lxqt_translate_ts(lxqt-policykit-agent_QM_FILES
     UPDATE_TRANSLATIONS
         ${UPDATE_TRANSLATIONS}
@@ -81,6 +85,7 @@ lxqt_translate_ts(lxqt-policykit-agent_QM_FILES
 )
 
 lxqt_app_translation_loader(QM_LOADER ${PROJECT_NAME})
+#************************************************
 
 add_executable(lxqt-policykit-agent
     ${lxqt-policykit-agent_SRCS}
