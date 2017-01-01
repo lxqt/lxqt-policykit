@@ -1,7 +1,14 @@
 
-lxqt-policykit-0.11.0 / 2016-09-24
+lxqt-policykit-0.11.1 / 2017-01-01
 ==================================
 
+  * Make CMakeLists.txt more uniform.
+  * Remove cpack (#25)
+
+0.11.0 / 2016-09-24
+===================
+
+  * Release 0.11.0: Add changelog
   * agentGui: Use default icon
   * agentGui: Choose current user in identities combo
   * agentGui: Handle setting the prompt correctly
