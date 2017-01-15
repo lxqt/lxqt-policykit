@@ -40,7 +40,7 @@
     <message>
         <location filename="../../../src/policykitagentgui.ui" line="55"/>
         <source>Identity:</source>
-        <translation type="unfinished">Ідентифікатор:</translation>
+        <translation>Ідентифікатор:</translation>
     </message>
     <message>
         <location filename="../../../src/policykitagentgui.ui" line="65"/>
