@@ -5,5 +5,3 @@ TryExec=lxqt-policykit-agent
 Exec=lxqt-policykit-agent
 OnlyShowIn=LXQt;
 X-LXQt-Module=true
-
-#TRANSLATIONS_DIR=translations
