@@ -108,3 +108,7 @@ install(TARGETS
     DESTINATION "${POLKIT_AGENT_BINARY_DIR}"
     COMPONENT Runtime
 )
+
+# merged from lxqt-common
+add_subdirectory(autostart)
+
