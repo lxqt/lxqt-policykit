@@ -24,6 +24,14 @@ message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 
 find_package(lxqt REQUIRED)
 
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(LXQT_POLKITAGENT_PATCH_VERSION 2)
+set(LXQT_POLKITAGENT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_POLKITAGENT_PATCH_VERSION})
+add_definitions("-DLXQT_POLKITAGENT_VERSION=\"${LXQT_POLKITAGENT_VERSION}\"")
+
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
 # Deal with a bug in polkit-qt5
