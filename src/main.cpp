@@ -31,6 +31,7 @@
 
 #include <XdgIcon>
 #include <LXQt/Settings>
+#include <QCommandLineParser>
 
 #include "policykitagent.h"
 
@@ -41,8 +42,17 @@ int main(int argc, char *argv[])
 #endif
 
     LXQt::Application app(argc, argv);
-
     app.setQuitOnLastWindowClosed(false);
+
+    QCommandLineParser parser;
+    parser.setApplicationDescription(QStringLiteral("LXQt Policykit Agent"));
+    const QString VERINFO = QStringLiteral(LXQT_POLKITAGENT_VERSION
+                                           "\nliblxqt   " LXQT_VERSION
+                                           "\nQt        " QT_VERSION_STR);
+    app.setApplicationVersion(VERINFO);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    parser.process(app);
 
     LXQtPolicykit::PolicykitAgent agent;
     return app.exec();
