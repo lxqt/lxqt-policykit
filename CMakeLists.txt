@@ -20,7 +20,7 @@ set(POLKIT_AGENT_BINARY_DIR "${CMAKE_INSTALL_BINDIR}" CACHE FILEPATH "Directory 
 find_package(PolkitQt5-1 REQUIRED)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 find_package(Qt5Widgets REQUIRED)
-message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
+message(STATUS "Building with Qt${Qt5Core_VERSION}")
 
 find_package(lxqt REQUIRED)
 
