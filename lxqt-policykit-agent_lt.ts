@@ -5,7 +5,7 @@
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
-        <location filename="../../../src/policykitagent.cpp" line="149"/>
+        <location filename="../../../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
         <translation>PolicyKit informacija</translation>
     </message>
@@ -15,17 +15,17 @@
         <translation>Kitas prieigos teisių suteikimas yra eigoje. Prašome bandyti dar kartą vėliau.</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="132"/>
+        <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
         <translation>Prieigos teisių suteikimas nepavyko</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="132"/>
+        <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
         <translation>Dėl kažkokių priežasčių prieigos teisių suteikimas nepavyko</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="144"/>
+        <location filename="../../../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
         <translation>PolicyKit klaida</translation>
     </message>

@@ -5,7 +5,7 @@
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
-        <location filename="../../../src/policykitagent.cpp" line="149"/>
+        <location filename="../../../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
         <translation>Informació de PolicyKit</translation>
     </message>
@@ -15,17 +15,17 @@
         <translation>Un altre procés d&apos;autenticació en progrés. Proveu-ho de nou més tard.</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="132"/>
+        <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
         <translation>Ha fallat l&apos;autenticació</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="132"/>
+        <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
         <translation>L&apos;autorització ha fallat per algun motiu</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="144"/>
+        <location filename="../../../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
         <translation>Error de PolicyKit</translation>
     </message>

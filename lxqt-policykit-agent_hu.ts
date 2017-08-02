@@ -5,7 +5,7 @@
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
-        <location filename="../../../src/policykitagent.cpp" line="149"/>
+        <location filename="../../../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
         <translation>Policykit információ</translation>
     </message>
@@ -15,17 +15,17 @@
         <translation>Már fut egy más hitelesítő.</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="132"/>
+        <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
         <translation>Hitelesítés sikertelen</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="132"/>
+        <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
         <translation>Hitelesítés valami miatt sikertelen</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="144"/>
+        <location filename="../../../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
         <translation>Policykit hiba</translation>
     </message>

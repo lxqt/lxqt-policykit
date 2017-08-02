@@ -5,7 +5,7 @@
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
-        <location filename="../../../src/policykitagent.cpp" line="149"/>
+        <location filename="../../../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
         <translation>PolicyKit-information</translation>
     </message>
@@ -15,17 +15,17 @@
         <translation>Anden igangværende godkendelse. Prøv venligst igen senere.</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="132"/>
+        <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
         <translation>Godkendelse fejlede</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="132"/>
+        <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
         <translation>Godkendelse fejlede af en eller anden grund</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="144"/>
+        <location filename="../../../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
         <translation>Fejl ved PolicyKit</translation>
     </message>
