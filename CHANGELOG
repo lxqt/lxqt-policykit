@@ -14,7 +14,7 @@ lxqt-policykit-0.11.1 / 2017-01-01
   * agentGui: Handle setting the prompt correctly
   * agent: Handle multiple identities correctly
   * Update README.md
-  * Fixed typo prefered -> preferred
+  * Fixed typo preferred -> preferred
   * Add README.md
   * build: Use external translations
   * ts-files removal (#21)
