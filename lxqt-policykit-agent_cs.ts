@@ -12,7 +12,7 @@
     <message>
         <location filename="../../../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
-        <translation>Probídá ještě jiná autentizace. Zkuste to, prosím, později znovu.</translation>
+        <translation>Probíhá ještě jiná autentizace. Zkuste to, prosím, později znovu.</translation>
     </message>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="139"/>
