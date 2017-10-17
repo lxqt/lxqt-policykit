@@ -18,7 +18,7 @@ message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRAR
 set(POLKIT_AGENT_BINARY_DIR "${CMAKE_INSTALL_BINDIR}" CACHE FILEPATH "Directory for install polkit agent")
 
 find_package(PolkitQt5-1 REQUIRED)
-find_package(Qt5LinguistTools REQUIRED QUIET)
+find_package(Qt5LinguistTools REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION}")
 
@@ -28,7 +28,9 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(LXQT_POLKITAGENT_PATCH_VERSION 2)
+# Patch Version
+set(LXQT_POLKITAGENT_PATCH_VERSION 0)
+
 set(LXQT_POLKITAGENT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_POLKITAGENT_PATCH_VERSION})
 add_definitions("-DLXQT_POLKITAGENT_VERSION=\"${LXQT_POLKITAGENT_VERSION}\"")
 
