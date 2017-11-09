@@ -17,12 +17,12 @@
     <message>
         <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
-        <translation>Godkendelse fejlede</translation>
+        <translation>Godkendelse mislykkedes</translation>
     </message>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
-        <translation>Godkendelse fejlede af en eller anden grund</translation>
+        <translation>Godkendelse mislykkedes af en eller anden grund</translation>
     </message>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="153"/>
