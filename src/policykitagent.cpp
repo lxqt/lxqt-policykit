@@ -81,7 +81,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
     }
     m_gui = new PolicykitAgentGUI(actionId, message, iconName, details, identities);
 
-    foreach (PolkitQt1::Identity i, identities)
+    for(const PolkitQt1::Identity& i : identities)
     {
         PolkitQt1::Agent::Session *session;
         session = new PolkitQt1::Agent::Session(i, cookie, result);
