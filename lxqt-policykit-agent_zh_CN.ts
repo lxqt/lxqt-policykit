@@ -22,7 +22,7 @@
     <message>
         <location filename="../../../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
-        <translation>认证因不明原因失败</translation>
+        <translation>认证因某些原因失败</translation>
     </message>
     <message>
         <location filename="../../../src/policykitagent.cpp" line="153"/>
