@@ -1,7 +1,16 @@
 
-lxqt-policykit-0.12.0 / 2017-10-21
+lxqt-policykit-0.13.0 / 2018-05-21
 ==================================
 
+  * CMake: Prevent in-source builds
+  * fix razor-qt -> lxqt and http -> https
+  * Fixed some LXDE mentions
+  * Drop Qt foreach
+
+0.12.0 / 2017-10-21
+===================
+
+  * Release 0.12.0: Update changelog
   * Set patch version
   * Don't export github templates
   * Updated Lithuanian translation
