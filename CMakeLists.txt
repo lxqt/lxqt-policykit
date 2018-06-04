@@ -86,16 +86,6 @@ lxqt_translate_ts(lxqt-policykit-agent_QM_FILES
         ${lxqt-policykit-agent_UI}
     INSTALL_DIR
         "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
-    PULL_TRANSLATIONS
-        ${PULL_TRANSLATIONS}
-    CLEAN_TRANSLATIONS
-        ${CLEAN_TRANSLATIONS}
-    TRANSLATIONS_REPO
-        ${TRANSLATIONS_REPO}
-    TRANSLATIONS_REFSPEC
-        ${TRANSLATIONS_REFSPEC}
-    REPO_SUBDIR
-        "lxqt-policykit/${PROJECT_NAME}"
 )
 
 lxqt_app_translation_loader(QM_LOADER ${PROJECT_NAME})
