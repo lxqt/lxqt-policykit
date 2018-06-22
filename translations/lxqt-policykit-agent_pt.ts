@@ -4,28 +4,28 @@
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="71"/>
-        <location filename="../../../src/policykitagent.cpp" line="158"/>
+        <location filename="../src/policykitagent.cpp" line="71"/>
+        <location filename="../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
         <translation>Informações PolicyKit</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="71"/>
+        <location filename="../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
         <translation>Já está em curso uma autorização. Por favor tente mais tarde.</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="139"/>
+        <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
         <translation>Falha de autenticação</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="139"/>
+        <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
         <translation>A autenticação falhou por alguma razão</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagent.cpp" line="153"/>
+        <location filename="../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
         <translation>Erro PolicyKit</translation>
     </message>
@@ -33,17 +33,17 @@
 <context>
     <name>PolicykitAgentGUI</name>
     <message>
-        <location filename="../../../src/policykitagentgui.ui" line="14"/>
+        <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
         <translation>Requer autenticação</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagentgui.ui" line="55"/>
+        <location filename="../src/policykitagentgui.ui" line="55"/>
         <source>Identity:</source>
         <translation>Identidade:</translation>
     </message>
     <message>
-        <location filename="../../../src/policykitagentgui.ui" line="65"/>
+        <location filename="../src/policykitagentgui.ui" line="65"/>
         <source>Password:</source>
         <translation>Palavra-passe:</translation>
     </message>
