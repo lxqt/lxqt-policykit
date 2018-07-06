@@ -81,6 +81,6 @@ seen above.
 
 ### Translation (Weblate)
 
-<a href="https://weblate.lxqt.org/projects/lxqt/lxqt-policykit/">
-<img src="https://weblate.lxqt.org/widgets/lxqt/-/lxqt-policykit/multi-auto.svg" alt="Translation status" />
+<a href="https://weblate.lxqt.org/projects/lxqt/lxqt-policykit-agent/">
+<img src="https://weblate.lxqt.org/widgets/lxqt/-/lxqt-policykit-agent/multi-auto.svg" alt="Translation status" />
 </a>
