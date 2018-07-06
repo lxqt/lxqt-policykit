@@ -77,3 +77,10 @@ of [lxqt-session](https://github.com/lxqt/lxqt-session).
 
 From a user's point of view the usage is limited to interacting with the GUI as
 seen above.
+
+
+### Translation (Weblate)
+
+<a href="https://weblate.lxqt.org/projects/lxqt/lxqt-policykit/">
+<img src="https://weblate.lxqt.org/widgets/lxqt/-/lxqt-policykit/multi-auto.svg" alt="Translation status" />
+</a>
