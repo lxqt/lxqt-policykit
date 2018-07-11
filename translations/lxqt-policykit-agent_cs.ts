@@ -12,17 +12,17 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
-        <translation>Probídá ještě jiná autentizace. Zkuste to, prosím, později znovu.</translation>
+        <translation>Probíhá ještě jiné ověřování totožnosti. Zkuste to později znovu.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
-        <translation>Autorizace se nezdařila</translation>
+        <translation>Pověření se nezdařilo</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
-        <translation>Autorizace se z nějakého důvodu nepodařila</translation>
+        <translation>Pověření se z nějakého důvodu nepodařilo</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="153"/>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>Požadována autentizace</translation>
+        <translation>Požadováno ověření totožnosti</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
