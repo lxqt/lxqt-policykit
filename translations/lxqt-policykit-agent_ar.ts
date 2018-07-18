@@ -7,12 +7,12 @@
         <location filename="../src/policykitagent.cpp" line="71"/>
         <location filename="../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
-        <translation>معلومات عدّة السّياسات</translation>
+        <translation>معلومات عُدّة السياسات</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
-        <translation>تجري عمليّة استيثاق أخرى حاليًّا. فضلًا جرّب مجدّدًا لاحقًا.</translation>
+        <translation>تجري عملية استيثاق أخرى حاليا. رجاءً أعِد المحاولة لاحقا.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
-        <translation>خطأ في عدّة السّياسات</translation>
+        <translation>خطأ في عُدّة السياسات</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
         <source>Password:</source>
-        <translation>كلمة المرور:</translation>
+        <translation>كلمة السر:</translation>
     </message>
 </context>
 </TS>
