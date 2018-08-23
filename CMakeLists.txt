@@ -97,6 +97,15 @@ add_executable(lxqt-policykit-agent
     ${QM_LOADER}
 )
 
+target_compile_definitions(lxqt-policykit-agent
+    PRIVATE
+        "QT_USE_QSTRINGBUILDER"
+        "QT_NO_CAST_FROM_ASCII"
+        "QT_NO_CAST_TO_ASCII"
+        "QT_NO_URL_CAST_FROM_STRING"
+        "QT_NO_CAST_FROM_BYTEARRAY"
+)
+
 target_link_libraries(lxqt-policykit-agent
     Qt5::Widgets
     lxqt
