@@ -45,7 +45,7 @@ PolicykitAgent::PolicykitAgent(QObject *parent)
       m_gui(0)
 {
     PolkitQt1::UnixSessionSubject session(getpid());
-    registerListener(session, "/org/lxqt/PolicyKit1/AuthenticationAgent");
+    registerListener(session, QStringLiteral("/org/lxqt/PolicyKit1/AuthenticationAgent"));
 }
 
 PolicykitAgent::~PolicykitAgent()
