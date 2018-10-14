@@ -111,7 +111,7 @@ target_link_libraries(lxqt-policykit-agent
     lxqt
     ${POLKITQT-1_CORE_LIBRARY}
     ${POLKITQT-1_AGENT_LIBRARY}
-    ${POLKIT_AGENT_LIBRARIES}
+    ${POLKIT_AGENT_LDFLAGS}
 )
 
 # install
