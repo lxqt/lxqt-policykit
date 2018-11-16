@@ -120,6 +120,12 @@ install(TARGETS
     DESTINATION "${POLKIT_AGENT_BINARY_DIR}"
     COMPONENT Runtime
 )
+install(FILES
+    man/lxqt-policykit-agent.1
+    DESTINATION "${CMAKE_INSTALL_MANDIR}/man1"
+    COMPONENT Runtime
+)
+
 
 # merged from lxqt-common
 add_subdirectory(autostart)
