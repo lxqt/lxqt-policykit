@@ -7,27 +7,27 @@
         <location filename="../src/policykitagent.cpp" line="71"/>
         <location filename="../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
-        <translation></translation>
+        <translation>Información de PolicyKit</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
-        <translation></translation>
+        <translation>Xa está en curso un proceso de autenticación. Ténteo de novo máis adiante.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
-        <translation></translation>
+        <translation>Produciuse un fallo no proceso de autorización</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
-        <translation></translation>
+        <translation>Por algunha razón produciuse un fallo no proceso de autorización</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
-        <translation></translation>
+        <translation>Produciuse un erro de PolicyKit</translation>
     </message>
 </context>
 <context>
@@ -35,17 +35,17 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation></translation>
+        <translation>É necesaria a autenticación</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
         <source>Identity:</source>
-        <translation></translation>
+        <translation>Identidade:</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
         <source>Password:</source>
-        <translation></translation>
+        <translation>Contrasinal:</translation>
     </message>
 </context>
 </TS>
