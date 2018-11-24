@@ -21,12 +21,15 @@ message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRAR
 
 set(POLKIT_AGENT_BINARY_DIR "${CMAKE_INSTALL_BINDIR}" CACHE FILEPATH "Directory for install polkit agent")
 
-find_package(PolkitQt5-1 REQUIRED)
-find_package(Qt5LinguistTools REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-message(STATUS "Building with Qt${Qt5Core_VERSION}")
+# Minumum Versions
+set(LXQT_MINIMUM_VERSION "0.14.0")
+set(QT_MINIMUM_VERSION "5.7.1")
 
-find_package(lxqt REQUIRED)
+find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
+find_package(PolkitQt5-1 REQUIRED)
+message(STATUS "Building with Qt${Qt5Core_VERSION}")
 
 # Patch Version
 set(LXQT_POLKITAGENT_PATCH_VERSION 0)
@@ -126,7 +129,4 @@ install(FILES
     COMPONENT Runtime
 )
 
-
-# merged from lxqt-common
 add_subdirectory(autostart)
-
