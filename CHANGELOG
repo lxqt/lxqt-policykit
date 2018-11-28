@@ -4,8 +4,6 @@ lxqt-policykit-0.14.0 / 2018-05-21
 
   * Bumped version to 0.14.0
   * Don't use automatic string conversions
-  * Translation updates
-  * Deleted superfluous *cs_CZ.desktop files
   * Improved cmake scripting
     - Set cmake_minimum_required to 3.1.0
     - Use POLKIT_AGENT_LDFLAGS instead of use POLKIT_AGENT_LIBRARIES
@@ -14,6 +12,8 @@ lxqt-policykit-0.14.0 / 2018-05-21
   * Moved translations from lxqt-l10n back to lxqt-policykit
     - Removed obsolete translation fuctionality
     - Added translation promo in README.md
+  * Translation updates
+  * Deleted superfluous *cs_CZ.desktop files
 
 lxqt-policykit-0.13.0 / 2018-05-21
 ==================================
