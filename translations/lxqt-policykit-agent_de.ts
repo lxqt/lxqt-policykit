@@ -7,7 +7,7 @@
         <location filename="../src/policykitagent.cpp" line="71"/>
         <location filename="../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
-        <translation>PolicyKit Information</translation>
+        <translation>PolicyKit-Information</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="71"/>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
-        <translation>PolicyKit Fehler</translation>
+        <translation>PolicyKit-Fehler</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>Authentisierung benötigt</translation>
+        <translation>Authentifizierung erforderlich</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
         <source>Password:</source>
-        <translation>Kennwort:</translation>
+        <translation>Passwort:</translation>
     </message>
 </context>
 </TS>
