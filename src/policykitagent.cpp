@@ -124,6 +124,8 @@ void PolicykitAgent::request(const QString &request, bool echo)
             session->cancel();
     });
     m_gui->show();
+    m_gui->activateWindow();
+    m_gui->raise();
 }
 
 void PolicykitAgent::completed(bool gainedAuthorization)
