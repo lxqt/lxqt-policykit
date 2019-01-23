@@ -1,5 +1,5 @@
 
-lxqt-policykit-0.14.0 / 2018-05-21
+lxqt-policykit-0.14.0 / 2019-01-25
 ==================================
 
   * Bumped version to 0.14.0
@@ -23,8 +23,8 @@ lxqt-policykit-0.13.0 / 2018-05-21
   * Fixed some LXDE mentions
   * Drop Qt foreach
 
-0.12.0 / 2017-10-21
-===================
+lxqt-policykit-0.12.0 / 2017-10-21
+==================================
 
   * Release 0.12.0: Update changelog
   * Set patch version
@@ -51,15 +51,15 @@ lxqt-policykit-0.13.0 / 2018-05-21
   * Fixed some more typos
   * Bump year
 
-0.11.1 / 2017-01-01
-===================
+lxqt-policykit-0.11.1 / 2017-01-01
+==================================
 
   * Release 0.11.1: Update changelog
   * Make CMakeLists.txt more uniform.
   * Remove cpack (#25)
 
-0.11.0 / 2016-09-24
-===================
+lxqt-policykit-0.11.0 / 2016-09-24
+==================================
 
   * Release 0.11.0: Add changelog
   * agentGui: Use default icon
@@ -76,8 +76,8 @@ lxqt-policykit-0.13.0 / 2018-05-21
   * Updated Russian translation Removed ru_RU file
   * update: lxqt-policykit-agent_hu.ts
 
-0.10.0 / 2015-10-31
-===================
+lxqt-policykit-0.10.0 / 2015-10-31
+==================================
 
   * Update translations
   * Fix license file
@@ -98,8 +98,8 @@ lxqt-policykit-0.13.0 / 2018-05-21
   * Hungarian translation
   * - Add a choice option for install binary. Some distributions use libexec instead os default usr/bin installs. It defauls to bin
 
-0.9.0 / 2015-01-19
-==================
+lxqt-policykit-0.9.0 / 2015-01-19
+=================================
 
   * File name was ok but language name wasn´t. My mistake.
   * Makes filename match translation language
@@ -110,8 +110,8 @@ lxqt-policykit-0.13.0 / 2018-05-21
   * Add Russian translation
   * CMakeLists.txt cleanups
 
-0.8.0 / 2014-06-28
-==================
+lxqt-policykit-0.8.0 / 2014-06-28
+=================================
 
   * Use portable Polkit headers
   * Deal with a bug in polkit-qt1 cmake file
@@ -119,8 +119,8 @@ lxqt-policykit-0.13.0 / 2018-05-21
   * Add initial Qt5 support.
   * Use new LXQt header files.
 
-0.7.0 / 2014-05-01
-==================
+lxqt-policykit-0.7.0 / 2014-05-01
+=================================
 
   * Update AUTHORS and COPYING files
   * Add CPack rules for creating tarball
