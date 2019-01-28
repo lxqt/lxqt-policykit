@@ -12,17 +12,17 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
-        <translation>Já está em curso uma autorização. Por favor tente mais tarde.</translation>
+        <translation>Outra autenticação em andamento. Por favor, tente novamente mais tarde.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
-        <translation>Falha de autenticação</translation>
+        <translation>Falha de Autenticação</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
-        <translation>A autenticação falhou por alguma razão</translation>
+        <translation>Autorização falhou por algum motivo</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="153"/>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>Requer autenticação</translation>
+        <translation>Requer Autenticação</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
         <source>Password:</source>
-        <translation>Palavra-passe:</translation>
+        <translation>Senha:</translation>
     </message>
 </context>
 </TS>
