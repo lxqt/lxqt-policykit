@@ -22,7 +22,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
-        <translation>ある理由により認証は失敗しました</translation>
+        <translation>何らかの理由で認証できませんでした</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="153"/>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>認証が要求されます</translation>
+        <translation>認証が必要です</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
