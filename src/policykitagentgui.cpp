@@ -88,9 +88,10 @@ QString PolicykitAgentGUI::identity()
     return identityComboBox->currentText();
 }
 
-QString PolicykitAgentGUI::response()
-{
-    return passwordEdit->text();
+QString PolicykitAgentGUI::response() {
+  QString response = passwordEdit->text();
+  passwordEdit->setText(QString());
+  return response;
 }
 
 void PolicykitAgentGUI::onIdentityChanged(int index)
