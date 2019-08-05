@@ -37,6 +37,7 @@
 
 #include <QApplication>
 #include <QHash>
+#include <QMessageBox>
 
 namespace LXQtPolicykit
 {
@@ -70,6 +71,7 @@ public slots:
 private:
     bool m_inProgress;
     PolicykitAgentGUI * m_gui;
+    QMessageBox *m_infobox;
     QHash<PolkitQt1::Agent::Session*,PolkitQt1::Identity> m_SessionIdentity;
 };
 

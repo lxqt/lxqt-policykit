@@ -42,7 +42,8 @@ namespace LXQtPolicykit
 PolicykitAgent::PolicykitAgent(QObject *parent)
     : PolkitQt1::Agent::Listener(parent),
       m_inProgress(false),
-      m_gui(0)
+      m_gui(0),
+      m_infobox(nullptr)
 {
     PolkitQt1::UnixSessionSubject session(getpid());
     registerListener(session, QStringLiteral("/org/lxqt/PolicyKit1/AuthenticationAgent"));
@@ -54,6 +55,9 @@ PolicykitAgent::~PolicykitAgent()
     {
         m_gui->blockSignals(true);
         m_gui->deleteLater();
+    }
+    if(m_infobox) {
+      delete m_infobox;
     }
 }
 
@@ -146,7 +150,10 @@ void PolicykitAgent::completed(bool gainedAuthorization)
         session->result()->setCompleted();
         m_inProgress = false;
     }
-
+    if (m_infobox){
+      m_infobox->hide();
+      delete m_infobox;
+    }
     delete session;
 }
 
@@ -157,7 +164,13 @@ void PolicykitAgent::showError(const QString &text)
 
 void PolicykitAgent::showInfo(const QString &text)
 {
-    QMessageBox::information(0, tr("PolicyKit Information"), text);
+    m_infobox = new QMessageBox(0);
+    m_infobox->setText(text);
+    m_infobox->setWindowTitle(tr("PolicyKit Information"));
+    m_infobox->setStandardButtons(QMessageBox::Ok);
+    m_infobox->setAttribute(Qt::WA_DeleteOnClose);
+    m_infobox->setModal(false);
+    m_infobox->show();
 }
 
 } //namespace
