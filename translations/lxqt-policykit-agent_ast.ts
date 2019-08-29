@@ -7,27 +7,27 @@
         <location filename="../src/policykitagent.cpp" line="71"/>
         <location filename="../src/policykitagent.cpp" line="158"/>
         <source>PolicyKit Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información de PolicyKit</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="71"/>
         <source>Another authentization in progress. Please try it again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hai otra autorización en cursu. Volvi tentalo más sero, por favor.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Autorización fallida</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="139"/>
         <source>Authorization failed for some reason</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;autorización falló por dalguna razón</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="153"/>
         <source>PolicyKit Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallu de PolicyKit</translation>
     </message>
 </context>
 <context>
@@ -35,17 +35,17 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Ríquese l&apos;autenticación</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
         <source>Identity:</source>
-        <translation type="unfinished"></translation>
+        <translation>identidá:</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contraseña:</translation>
     </message>
 </context>
 </TS>
