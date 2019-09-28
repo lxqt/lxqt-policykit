@@ -12,17 +12,17 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="75"/>
         <source>Another authentication is in progress. Please try again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>En annen godkjenning foregår. Vennligst prøv igjen senere.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="145"/>
         <source>Authorization Failed</source>
-        <translation>Autentisering feilet</translation>
+        <translation>Autentisering mislyktes</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="145"/>
         <source>Authorization failed for some reason</source>
-        <translation>Autentisering feilet av ukjent grunn</translation>
+        <translation>Autentisering mislyktes av ukjent grunn</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="162"/>
