@@ -12,7 +12,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="75"/>
         <source>Another authentication is in progress. Please try again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Başka bir kimlik doğrulama işlemi devam ediyor. Lütfen daha sonra yeniden deneyiniz.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="145"/>
