@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>Hitelesítés kell</translation>
+        <translation>Hitelesítés szükséges</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
