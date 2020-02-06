@@ -12,7 +12,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="75"/>
         <source>Another authentication is in progress. Please try again later.</source>
-        <translation type="unfinished">Egy másik hitelesítés van folyamatban. Próbálkozzon később.</translation>
+        <translation>Egy másik hitelesítés van folyamatban. Próbálkozzon később.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="145"/>
