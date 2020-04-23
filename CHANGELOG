@@ -1,3 +1,10 @@
+lxqt-policykit-0.15.0 / 2020-04-22
+==================================
+  * Bumped version to 0.15.0.
+  * Delete Password from line-edit.
+  * Made the infobox non-modal.
+  * Removed (duplicated) string casts definitions.
+
 lxqt-policykit-0.14.1 / 2019-02-25
 ==================================
 
