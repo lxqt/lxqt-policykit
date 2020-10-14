@@ -79,8 +79,10 @@ From a user's point of view the usage is limited to interacting with the GUI as
 seen above.
 
 
-### Translation (Weblate)
+### Translations
 
-<a href="https://weblate.lxqt.org/projects/lxqt/lxqt-policykit-agent/">
-<img src="https://weblate.lxqt.org/widgets/lxqt/-/lxqt-policykit-agent/multi-auto.svg" alt="Translation status" />
+Translations can be done in [LXQt-Weblate](https://translate.lxqt-project.org/projects/lxqt-configuration/lxqt-policykit/).
+
+<a href="https://translate.lxqt-project.org/projects/lxqt-configuration/lxqt-policykit/">
+<img src="https://translate.lxqt-project.org/widgets/lxqt-configuration/-/lxqt-policykit/multi-auto.svg" alt="Translation status" />
 </a>
