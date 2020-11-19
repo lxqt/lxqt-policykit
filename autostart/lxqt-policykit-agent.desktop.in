@@ -1,6 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=PolicyKit Handler
 TryExec=lxqt-policykit-agent
 Exec=lxqt-policykit-agent
 OnlyShowIn=LXQt;
