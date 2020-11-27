@@ -38,7 +38,7 @@ PolicykitAgentGUI::PolicykitAgentGUI(const QString &actionId,
                                      const QString &iconName,
                                      const PolkitQt1::Details &details,
                                      const PolkitQt1::Identity::List &identities)
-   : QDialog(0, Qt::WindowStaysOnTopHint)
+   : QDialog(nullptr, Qt::WindowStaysOnTopHint)
 {
     setupUi(this);
     Q_UNUSED(actionId);

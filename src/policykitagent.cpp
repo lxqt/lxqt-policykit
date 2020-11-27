@@ -42,7 +42,7 @@ namespace LXQtPolicykit
 PolicykitAgent::PolicykitAgent(QObject *parent)
     : PolkitQt1::Agent::Listener(parent),
       m_inProgress(false),
-      m_gui(0),
+      m_gui(nullptr),
       m_infobox(nullptr)
 {
     PolkitQt1::UnixSessionSubject session(getpid());
@@ -72,7 +72,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
 {
     if (m_inProgress)
     {
-        QMessageBox::information(0, tr("PolicyKit Information"), tr("Another authentication is in progress. Please try again later."));
+        QMessageBox::information(nullptr, tr("PolicyKit Information"), tr("Another authentication is in progress. Please try again later."));
         return;
     }
     m_inProgress = true;
@@ -81,7 +81,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
     if (m_gui)
     {
         delete m_gui;
-        m_gui = 0;
+        m_gui = nullptr;
     }
     m_gui = new PolicykitAgentGUI(actionId, message, iconName, details, identities);
 
@@ -142,7 +142,7 @@ void PolicykitAgent::completed(bool gainedAuthorization)
     {
         if (!gainedAuthorization)
         {
-            QMessageBox::information(0, tr("Authorization Failed"), tr("Authorization failed for some reason"));
+            QMessageBox::information(nullptr, tr("Authorization Failed"), tr("Authorization failed for some reason"));
         }
 
         // Note: the setCompleted() must be called exacly once (as the
@@ -159,12 +159,12 @@ void PolicykitAgent::completed(bool gainedAuthorization)
 
 void PolicykitAgent::showError(const QString &text)
 {
-    QMessageBox::warning(0, tr("PolicyKit Error"), text);
+    QMessageBox::warning(nullptr, tr("PolicyKit Error"), text);
 }
 
 void PolicykitAgent::showInfo(const QString &text)
 {
-    m_infobox = new QMessageBox(0);
+    m_infobox = new QMessageBox(nullptr);
     m_infobox->setText(text);
     m_infobox->setWindowTitle(tr("PolicyKit Information"));
     m_infobox->setStandardButtons(QMessageBox::Ok);
