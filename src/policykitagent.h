@@ -50,7 +50,7 @@ class PolicykitAgent : public PolkitQt1::Agent::Listener
 
 public:
     PolicykitAgent(QObject *parent = 0);
-    ~PolicykitAgent();
+    ~PolicykitAgent() override;
 
 public slots:
     void initiateAuthentication(const QString &actionId,
@@ -59,9 +59,9 @@ public slots:
                                 const PolkitQt1::Details &details,
                                 const QString &cookie,
                                 const PolkitQt1::Identity::List &identities,
-                                PolkitQt1::Agent::AsyncResult *result);
-    bool initiateAuthenticationFinish();
-    void cancelAuthentication();
+                                PolkitQt1::Agent::AsyncResult *result) override;
+    bool initiateAuthenticationFinish() override;
+    void cancelAuthentication() override;
 
     void request(const QString &request, bool echo);
     void completed(bool gainedAuthorization);
