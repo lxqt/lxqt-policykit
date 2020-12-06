@@ -35,9 +35,7 @@ they are technically different.
 
 Runtime dependencies are polkit-qt5 and [liblxqt](https://github.com/lxqt/liblxqt).
 Additional build dependencies are CMake and optionally Git to pull latest VCS
-checkouts. The localization files were outsourced to repository
-[lxqt-l10n](https://github.com/lxqt/lxqt-l10n) so the corresponding dependencies
-are needed, too. Please refer to this repository's `README.md` for further information.
+checkouts.
 
 Code configuration is handled by CMake. CMake variable `CMAKE_INSTALL_PREFIX`
 has to be set to `/usr` on most operating systems.
@@ -56,8 +54,7 @@ the [AUR](https://aur.archlinux.org).
 #### Debian
 
 Package `lxqt-policykit` is available in the official repositories as of Debian
-stretch. For now it is comprising the translations as well but these will probably
-be outsourced in package `lxqt-policykit-l10n` one day.
+buster.
 
 #### Fedora
 
