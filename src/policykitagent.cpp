@@ -91,10 +91,10 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
         session = new PolkitQt1::Agent::Session(i, cookie, result);
         Q_ASSERT(session);
         m_SessionIdentity[session] = i;
-        connect(session, SIGNAL(request(QString, bool)), this, SLOT(request(QString, bool)));
-        connect(session, SIGNAL(completed(bool)), this, SLOT(completed(bool)));
-        connect(session, SIGNAL(showError(QString)), this, SLOT(showError(QString)));
-        connect(session, SIGNAL(showInfo(QString)), this, SLOT(showInfo(QString)));
+        connect(session, &PolkitQt1::Agent::Session::request, this, &PolicykitAgent::request);
+        connect(session, &PolkitQt1::Agent::Session::completed, this, &PolicykitAgent::completed);
+        connect(session, &PolkitQt1::Agent::Session::showError, this, &PolicykitAgent::showError);
+        connect(session, &PolkitQt1::Agent::Session::showInfo, this, &PolicykitAgent::showInfo);
         session->initiate();
     }
 }
