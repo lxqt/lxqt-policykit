@@ -120,7 +120,7 @@ void PolicykitAgent::request(const QString &request, bool echo)
 
     PolkitQt1::Identity identity = m_SessionIdentity[session];
     m_gui->setPrompt(identity, request, echo);
-    connect(m_gui, &QDialog::finished, [this, session] (int result)
+    connect(m_gui, &QDialog::finished, this, [this, session] (int result)
     {
         if (result == QDialog::Accepted && m_gui->identity() == m_SessionIdentity[session].toString())
             session->setResponse(m_gui->response());
