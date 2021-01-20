@@ -91,10 +91,10 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
         session = new PolkitQt1::Agent::Session(i, cookie, result);
         Q_ASSERT(session);
         m_SessionIdentity[session] = i;
-        connect(session, SIGNAL(request(QString, bool)), this, SLOT(request(QString, bool)));
-        connect(session, SIGNAL(completed(bool)), this, SLOT(completed(bool)));
-        connect(session, SIGNAL(showError(QString)), this, SLOT(showError(QString)));
-        connect(session, SIGNAL(showInfo(QString)), this, SLOT(showInfo(QString)));
+        connect(session, &PolkitQt1::Agent::Session::request, this, &PolicykitAgent::request);
+        connect(session, &PolkitQt1::Agent::Session::completed, this, &PolicykitAgent::completed);
+        connect(session, &PolkitQt1::Agent::Session::showError, this, &PolicykitAgent::showError);
+        connect(session, &PolkitQt1::Agent::Session::showInfo, this, &PolicykitAgent::showInfo);
         session->initiate();
     }
 }
@@ -120,7 +120,7 @@ void PolicykitAgent::request(const QString &request, bool echo)
 
     PolkitQt1::Identity identity = m_SessionIdentity[session];
     m_gui->setPrompt(identity, request, echo);
-    connect(m_gui, &QDialog::finished, [this, session] (int result)
+    connect(m_gui, &QDialog::finished, this, [this, session] (int result)
     {
         if (result == QDialog::Accepted && m_gui->identity() == m_SessionIdentity[session].toString())
             session->setResponse(m_gui->response());
