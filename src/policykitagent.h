@@ -68,6 +68,9 @@ public slots:
     void showError(const QString &text);
     void showInfo(const QString &text);
 
+protected:
+    void deleteSessions();
+
 private:
     bool m_inProgress;
     PolicykitAgentGUI * m_gui;

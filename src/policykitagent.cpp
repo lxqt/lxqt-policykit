@@ -59,6 +59,14 @@ PolicykitAgent::~PolicykitAgent()
     if(m_infobox) {
       delete m_infobox;
     }
+    deleteSessions();
+}
+
+void PolicykitAgent::deleteSessions()
+{
+    for (auto i = m_SessionIdentity.begin(), i_e = m_SessionIdentity.end(); i != i_e; ++i)
+        delete i.key();
+    m_SessionIdentity.clear();
 }
 
 
@@ -76,7 +84,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
         return;
     }
     m_inProgress = true;
-    m_SessionIdentity.clear();
+    deleteSessions();
 
     if (m_gui)
     {
@@ -138,7 +146,7 @@ void PolicykitAgent::completed(bool gainedAuthorization)
     Q_ASSERT(session);
     Q_ASSERT(m_gui);
 
-    if (m_gui->identity() == m_SessionIdentity[session].toString())
+    if (m_inProgress && m_gui->identity() == m_SessionIdentity[session].toString())
     {
         if (!gainedAuthorization)
         {
@@ -154,7 +162,6 @@ void PolicykitAgent::completed(bool gainedAuthorization)
       m_infobox->hide();
       delete m_infobox;
     }
-    delete session;
 }
 
 void PolicykitAgent::showError(const QString &text)
