@@ -56,9 +56,7 @@ PolicykitAgent::~PolicykitAgent()
         m_gui->blockSignals(true);
         m_gui->deleteLater();
     }
-    if(m_infobox) {
-      delete m_infobox;
-    }
+    delete m_infobox;
     deleteSessions();
 }
 
