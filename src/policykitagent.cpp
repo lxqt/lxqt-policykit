@@ -51,7 +51,7 @@ PolicykitAgent::PolicykitAgent(QObject *parent)
 
 PolicykitAgent::~PolicykitAgent()
 {
-    if (m_gui)
+    if (m_gui != nullptr)
     {
         m_gui->blockSignals(true);
         m_gui->deleteLater();
@@ -84,7 +84,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
     m_inProgress = true;
     deleteSessions();
 
-    if (m_gui)
+    if (m_gui != nullptr)
     {
         delete m_gui;
         m_gui = nullptr;
@@ -156,7 +156,7 @@ void PolicykitAgent::completed(bool gainedAuthorization)
         session->result()->setCompleted();
         m_inProgress = false;
     }
-    if (m_infobox){
+    if (m_infobox != nullptr){
       m_infobox->hide();
       delete m_infobox;
     }
