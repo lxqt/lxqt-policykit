@@ -53,6 +53,7 @@ public:
                       const QString &iconName,
                       const PolkitQt1::Details &details,
                       const PolkitQt1::Identity::List &identities);
+    ~PolicykitAgentGUI() override;
 
     void setPrompt(const PolkitQt1::Identity &identity, const QString &text, bool echo);
     /*! \brief Returns currently selected identity (serialized by toString())

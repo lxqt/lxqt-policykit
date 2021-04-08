@@ -66,6 +66,8 @@ PolicykitAgentGUI::PolicykitAgentGUI(const QString &actionId,
     passwordEdit->setFocus(Qt::OtherFocusReason);
 }
 
+PolicykitAgentGUI::~PolicykitAgentGUI() = default;
+
 void PolicykitAgentGUI::setPrompt(const PolkitQt1::Identity &identity, const QString &text, bool echo)
 {
     const int ix = identityComboBox->findText(identity.toString());
