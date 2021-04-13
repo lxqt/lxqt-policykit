@@ -7,17 +7,17 @@
         <location filename="../src/policykitagent.cpp" line="75"/>
         <location filename="../src/policykitagent.cpp" line="169"/>
         <source>PolicyKit Information</source>
-        <translation>Informatie over PolicyKit</translation>
+        <translation>PolicyKit-informatie</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="75"/>
         <source>Another authentication is in progress. Please try again later.</source>
-        <translation>Een andere authenticatie is momenteel in gang. Probeer het later nog eens.</translation>
+        <translation>Er is momenteel een andere authenticatie bezig. Probeer het later nog eens.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="145"/>
         <source>Authorization Failed</source>
-        <translation>Authenticatie is mislukt</translation>
+        <translation>Authenticatie mislukt</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="145"/>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="162"/>
         <source>PolicyKit Error</source>
-        <translation>Fout van PolicyKit</translation>
+        <translation>PolicyKit-fout</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>Authenticatie is vereist</translation>
+        <translation>Authenticatie vereist</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
