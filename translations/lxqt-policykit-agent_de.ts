@@ -4,28 +4,28 @@
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
-        <location filename="../src/policykitagent.cpp" line="75"/>
-        <location filename="../src/policykitagent.cpp" line="169"/>
+        <location filename="../src/policykitagent.cpp" line="81"/>
+        <location filename="../src/policykitagent.cpp" line="174"/>
         <source>PolicyKit Information</source>
         <translation>PolicyKit-Information</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="75"/>
+        <location filename="../src/policykitagent.cpp" line="81"/>
         <source>Another authentication is in progress. Please try again later.</source>
         <translation>Eine andere Authentifizierung läuft derzeit. Bitte versuchen Sie es später erneut.</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="145"/>
+        <location filename="../src/policykitagent.cpp" line="151"/>
         <source>Authorization Failed</source>
         <translation>Autorisierung fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="145"/>
+        <location filename="../src/policykitagent.cpp" line="151"/>
         <source>Authorization failed for some reason</source>
         <translation>Autorisierung aus irgendeinem Grund fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="162"/>
+        <location filename="../src/policykitagent.cpp" line="167"/>
         <source>PolicyKit Error</source>
         <translation>PolicyKit-Fehler</translation>
     </message>
@@ -34,16 +34,19 @@
     <name>PolicykitAgentGUI</name>
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
+        <location filename="../build/lxqt-policykit-agent_autogen/include/ui_policykitagentgui.h" line="100"/>
         <source>Authentication Required</source>
         <translation>Authentifizierung erforderlich</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
+        <location filename="../build/lxqt-policykit-agent_autogen/include/ui_policykitagentgui.h" line="101"/>
         <source>Identity:</source>
         <translation>Identität:</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
+        <location filename="../build/lxqt-policykit-agent_autogen/include/ui_policykitagentgui.h" line="102"/>
         <source>Password:</source>
         <translation>Passwort:</translation>
     </message>
