@@ -12,7 +12,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="81"/>
         <source>Another authentication is in progress. Please try again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>تجري مصادقة أخرى الان. الرجاء معاودة المحاولة في وقت لاحق.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="151"/>
