@@ -34,19 +34,16 @@
     <name>PolicykitAgentGUI</name>
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
-        <location filename="../build/lxqt-policykit-agent_autogen/include/ui_policykitagentgui.h" line="100"/>
         <source>Authentication Required</source>
         <translation>Autenticazione richiesta</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>
-        <location filename="../build/lxqt-policykit-agent_autogen/include/ui_policykitagentgui.h" line="101"/>
         <source>Identity:</source>
         <translation>Identità:</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
-        <location filename="../build/lxqt-policykit-agent_autogen/include/ui_policykitagentgui.h" line="102"/>
         <source>Password:</source>
         <translation>Password:</translation>
     </message>
