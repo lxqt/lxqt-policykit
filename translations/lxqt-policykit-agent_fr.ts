@@ -17,12 +17,12 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="151"/>
         <source>Authorization Failed</source>
-        <translation>Échec de l&apos;autorisation</translation>
+        <translation>Échec de l’autorisation</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="151"/>
         <source>Authorization failed for some reason</source>
-        <translation>L&apos;autorisation a échoué pour une raison quelconque</translation>
+        <translation>L’autorisation a échoué pour une raison quelconque</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="167"/>
