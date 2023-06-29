@@ -42,6 +42,7 @@ namespace LXQtPolicykit
 PolicykitAgent::PolicykitAgent(QObject *parent)
     : PolkitQt1::Agent::Listener(parent),
       m_inProgress(false),
+      m_inProgressAlert(false),
       m_gui(nullptr),
       m_infobox(nullptr)
 {
@@ -78,7 +79,11 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
 {
     if (m_inProgress)
     {
-        QMessageBox::information(nullptr, tr("PolicyKit Information"), tr("Another authentication is in progress. Please try again later."));
+        if (!m_inProgressAlert) {
+            m_inProgressAlert = true;
+            QMessageBox::information(nullptr, tr("PolicyKit Information"), tr("Another authentication is in progress. Please try again later."));
+            m_inProgressAlert = false;
+        }
         return;
     }
     m_inProgress = true;

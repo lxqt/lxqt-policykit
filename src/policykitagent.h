@@ -73,6 +73,7 @@ protected:
 
 private:
     bool m_inProgress;
+    bool m_inProgressAlert;
     PolicykitAgentGUI * m_gui;
     QMessageBox *m_infobox;
     QHash<PolkitQt1::Agent::Session*,PolkitQt1::Identity> m_SessionIdentity;
