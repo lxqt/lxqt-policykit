@@ -4,28 +4,28 @@
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
-        <location filename="../src/policykitagent.cpp" line="81"/>
-        <location filename="../src/policykitagent.cpp" line="174"/>
+        <location filename="../src/policykitagent.cpp" line="85"/>
+        <location filename="../src/policykitagent.cpp" line="183"/>
         <source>PolicyKit Information</source>
         <translation>PolicyKit 정보</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="81"/>
+        <location filename="../src/policykitagent.cpp" line="82"/>
         <source>Another authentication is in progress. Please try again later.</source>
         <translation>다른 인증이 진행 중입니다. 나중에 다시 시도하십시오.</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="151"/>
+        <location filename="../src/policykitagent.cpp" line="160"/>
         <source>Authorization Failed</source>
         <translation>인증 실패</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="151"/>
+        <location filename="../src/policykitagent.cpp" line="160"/>
         <source>Authorization failed for some reason</source>
         <translation>몇몇 이유로 인해 인증에 실패했습니다</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="167"/>
+        <location filename="../src/policykitagent.cpp" line="176"/>
         <source>PolicyKit Error</source>
         <translation>PolicyKit 오류</translation>
     </message>
