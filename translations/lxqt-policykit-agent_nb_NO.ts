@@ -4,28 +4,28 @@
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
-        <location filename="../src/policykitagent.cpp" line="81"/>
-        <location filename="../src/policykitagent.cpp" line="174"/>
+        <location filename="../src/policykitagent.cpp" line="85"/>
+        <location filename="../src/policykitagent.cpp" line="183"/>
         <source>PolicyKit Information</source>
         <translation>PolicyKit-informasjon</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="81"/>
+        <location filename="../src/policykitagent.cpp" line="82"/>
         <source>Another authentication is in progress. Please try again later.</source>
         <translation>En annen godkjenning foregår. Vennligst prøv igjen senere.</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="151"/>
+        <location filename="../src/policykitagent.cpp" line="160"/>
         <source>Authorization Failed</source>
         <translation>Autentisering mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="151"/>
+        <location filename="../src/policykitagent.cpp" line="160"/>
         <source>Authorization failed for some reason</source>
         <translation>Autentisering mislyktes av ukjent grunn</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="167"/>
+        <location filename="../src/policykitagent.cpp" line="176"/>
         <source>PolicyKit Error</source>
         <translation>PolicyKit-feil</translation>
     </message>
