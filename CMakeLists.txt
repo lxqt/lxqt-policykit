@@ -22,13 +22,13 @@ message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRAR
 set(POLKIT_AGENT_BINARY_DIR "${CMAKE_INSTALL_BINDIR}" CACHE FILEPATH "Directory for install polkit agent")
 
 # Minumum Versions
-set(LXQT_MINIMUM_VERSION "1.4.0")
-set(QT_MINIMUM_VERSION "5.15.0")
+set(LXQT_MINIMUM_VERSION "2.0.0")
+set(QT_MINIMUM_VERSION "6.6.0")
 
-find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6  ${QT_MINIMUM_VERSION} COMPONENTS REQUIRED LinguistTools)
+find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
-find_package(PolkitQt5-1 REQUIRED)
+find_package(PolkitQt6-1 REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION}")
 
 # Patch Version
@@ -43,11 +43,7 @@ include(LXQtPreventInSourceBuilds)
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
 # Deal with a bug in polkit-qt5
-if (NOT IS_ABSOLUTE "${POLKITQT-1_INCLUDE_DIR}")
-    set(POLKITQT-1_INCLUDE_DIR "${POLKITQT-1_INSTALL_DIR}/${POLKITQT-1_INCLUDE_DIR}")
-    set(POLKITQT-1_AGENT_LIBRARY "${POLKITQT-1_INSTALL_DIR}/${POLKITQT-1_AGENT_LIBRARY}")
-    set(POLKITQT-1_CORE_LIBRARY "${POLKITQT-1_INSTALL_DIR}/${POLKITQT-1_CORE_LIBRARY}")
-endif()
+
 message(STATUS "PolkitQt-1: ${POLKITQT-1_VERSION_STRING}")
 message(STATUS "   install: ${POLKITQT-1_INSTALL_DIR}")
 message(STATUS "      libs: ${POLKITQT-1_CORE_LIBRARY} ${POLKITQT-1_AGENT_LIBRARY}")
@@ -101,7 +97,7 @@ add_executable(lxqt-policykit-agent
 )
 
 target_link_libraries(lxqt-policykit-agent
-    Qt5::Widgets
+    Qt6::Widgets
     lxqt
     ${POLKITQT-1_CORE_LIBRARY}
     ${POLKITQT-1_AGENT_LIBRARY}
