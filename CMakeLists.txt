@@ -42,8 +42,6 @@ add_definitions(
 include(LXQtPreventInSourceBuilds)
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
-# Deal with a bug in polkit-qt5
-
 message(STATUS "PolkitQt-1: ${POLKITQT-1_VERSION_STRING}")
 message(STATUS "   install: ${POLKITQT-1_INSTALL_DIR}")
 message(STATUS "      libs: ${POLKITQT-1_CORE_LIBRARY} ${POLKITQT-1_AGENT_LIBRARY}")
