@@ -71,7 +71,7 @@ PolicykitAgentGUI::~PolicykitAgentGUI() = default;
 void PolicykitAgentGUI::setPromptLabel(const QString &text)
 {
     if (QString::compare(text.trimmed(), QLatin1StringView("Password:"), Qt::CaseInsensitive) == 0)
-        promptLabel->setText(tr("Password:"));
+        promptLabel->setText(QCoreApplication::translate("PolicykitAgentGUI", "Password:"));
     else
         promptLabel->setText(text);
 }

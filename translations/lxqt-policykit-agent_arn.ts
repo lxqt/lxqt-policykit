@@ -31,14 +31,6 @@
     </message>
 </context>
 <context>
-    <name>LXQtPolicykit::PolicykitAgentGUI</name>
-    <message>
-        <location filename="../src/policykitagentgui.cpp" line="74"/>
-        <source>Password:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>PolicykitAgentGUI</name>
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
@@ -52,6 +44,7 @@
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
+        <location filename="../src/policykitagentgui.cpp" line="74"/>
         <source>Password:</source>
         <translation type="unfinished"></translation>
     </message>

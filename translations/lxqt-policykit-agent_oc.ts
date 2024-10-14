@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="oc_FR">
+<TS version="2.1" language="oc">
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
@@ -31,14 +31,6 @@
     </message>
 </context>
 <context>
-    <name>LXQtPolicykit::PolicykitAgentGUI</name>
-    <message>
-        <location filename="../src/policykitagentgui.cpp" line="74"/>
-        <source>Password:</source>
-        <translation>Senhal :</translation>
-    </message>
-</context>
-<context>
     <name>PolicykitAgentGUI</name>
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
@@ -52,6 +44,7 @@
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
+        <location filename="../src/policykitagentgui.cpp" line="74"/>
         <source>Password:</source>
         <translation>Senhal :</translation>
     </message>
