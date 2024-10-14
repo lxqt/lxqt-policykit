@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="et">
+<TS version="2.1" language="et_EE">
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
@@ -28,6 +28,14 @@
         <location filename="../src/policykitagent.cpp" line="176"/>
         <source>PolicyKit Error</source>
         <translation>PolicyKit&apos;i viga</translation>
+    </message>
+</context>
+<context>
+    <name>LXQtPolicykit::PolicykitAgentGUI</name>
+    <message>
+        <location filename="../src/policykitagentgui.cpp" line="74"/>
+        <source>Password:</source>
+        <translation>Salasõna:</translation>
     </message>
 </context>
 <context>

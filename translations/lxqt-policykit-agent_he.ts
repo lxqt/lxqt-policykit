@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="he">
+<TS version="2.1" language="he_IL">
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
@@ -28,6 +28,14 @@
         <location filename="../src/policykitagent.cpp" line="176"/>
         <source>PolicyKit Error</source>
         <translation>שגיאת PolicyKit</translation>
+    </message>
+</context>
+<context>
+    <name>LXQtPolicykit::PolicykitAgentGUI</name>
+    <message>
+        <location filename="../src/policykitagentgui.cpp" line="74"/>
+        <source>Password:</source>
+        <translation>ססמה:</translation>
     </message>
 </context>
 <context>

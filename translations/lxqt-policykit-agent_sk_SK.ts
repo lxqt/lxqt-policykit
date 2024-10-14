@@ -31,6 +31,14 @@
     </message>
 </context>
 <context>
+    <name>LXQtPolicykit::PolicykitAgentGUI</name>
+    <message>
+        <location filename="../src/policykitagentgui.cpp" line="74"/>
+        <source>Password:</source>
+        <translation>Heslo:</translation>
+    </message>
+</context>
+<context>
     <name>PolicykitAgentGUI</name>
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
