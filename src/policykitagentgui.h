@@ -47,6 +47,8 @@ private:
             , RolePromptEcho
     };
 
+    void setPromptLabel(const QString &text);
+
 public:
     PolicykitAgentGUI(const QString &actionId,
                       const QString &message,
