@@ -44,6 +44,7 @@
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="65"/>
+        <location filename="../src/policykitagentgui.cpp" line="74"/>
         <source>Password:</source>
         <translation>Пароль:</translation>
     </message>
