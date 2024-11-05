@@ -22,7 +22,7 @@ message(STATUS "polkit agent: ${POLKIT_AGENT_INCLUDE_DIRS} ${POLKIT_AGENT_LIBRAR
 set(POLKIT_AGENT_BINARY_DIR "${CMAKE_INSTALL_BINDIR}" CACHE FILEPATH "Directory for install polkit agent")
 
 # Minumum Versions
-set(LXQT_MINIMUM_VERSION "2.0.0")
+set(LXQT_MINIMUM_VERSION "2.1.0")
 set(QT_MINIMUM_VERSION "6.6.0")
 
 find_package(Qt6  ${QT_MINIMUM_VERSION} COMPONENTS REQUIRED LinguistTools)
