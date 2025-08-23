@@ -2,7 +2,7 @@
 
 ## Overview
 
-lxqt-policykit is the polkit authentification agent of LXQt.
+lxqt-policykit is the polkit authentication agent of LXQt.
 
 [polkit](https://www.freedesktop.org/wiki/Software/polkit/) is a software framework
 to handle privileges of processes.
@@ -11,8 +11,10 @@ In LXQt it is e. g. used to extend the privileges of the GUI tools of
 user. But in order to apply the settings they deal with root privileges are needed
 and acquired via polkit.
 Among the various components of polkit the authentication agent is the one to
-query the user for credentials by dialogue windows like this one of lxqt-policykit.
+query the user for credentials by dialogue windows like this one of lxqt-policykit:
+
 ![lxqt-policykit: GUI](lxqt-policykit_gui.png)
+
 While there's only a single implementation of all other polkit components various
 different authentication agents are provided by the various desktop environments.
 Basically these can be used interchangeably, that is lxqt-policykit can be used
@@ -33,7 +35,7 @@ they are technically different.
 
 ### Compiling sources
 
-Runtime dependencies are polkit-qt5 and [liblxqt](https://github.com/lxqt/liblxqt).
+Runtime dependencies are polkit-qt6 and [liblxqt](https://github.com/lxqt/liblxqt).
 Additional build dependencies are CMake and optionally Git to pull latest VCS
 checkouts.
 
@@ -45,25 +47,7 @@ as usual.
 
 ### Binary packages
 
-#### Arch Linux
-
-The latest release is provided by package `lxqt-policykit` in repository community,
-the actual master checkout can be compiled by packages `lxqt-policykit-git` from
-the [AUR](https://aur.archlinux.org).
-
-#### Debian
-
-Package `lxqt-policykit` is available in the official repositories as of Debian
-buster.
-
-#### Fedora
-
-Package `lxqt-policykit` is available as of Fedora 22.
-
-#### openSUSE
-
-Package `lxqt-policykit` is providing the binary, `lxqt-policykit-lang` the
-translations. Both are available as of openSUSE Leap 42.1.
+Official binary packages are provided by all major Linux and BSD distributions. Just use your package manager to search for string lxqt-policykit.
 
 ## Configuration, Usage
 
