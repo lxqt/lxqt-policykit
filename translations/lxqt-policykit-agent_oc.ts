@@ -22,7 +22,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="160"/>
         <source>Authorization failed for some reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Fracàs de l’autorizacion per una rason quina que siá</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="176"/>
