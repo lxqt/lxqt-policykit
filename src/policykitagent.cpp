@@ -57,7 +57,10 @@ PolicykitAgent::~PolicykitAgent()
         m_gui->blockSignals(true);
         m_gui->deleteLater();
     }
-    delete m_infobox;
+    if (m_infobox != nullptr) {
+        m_infobox->deleteLater();
+        m_infobox = nullptr;
+    }
     deleteSessions();
 }
 
@@ -167,7 +170,8 @@ void PolicykitAgent::completed(bool gainedAuthorization)
     }
     if (m_infobox != nullptr){
       m_infobox->hide();
-      delete m_infobox;
+      m_infobox->deleteLater();
+      m_infobox = nullptr;
     }
 }
 
@@ -178,11 +182,13 @@ void PolicykitAgent::showError(const QString &text)
 
 void PolicykitAgent::showInfo(const QString &text)
 {
+    if (m_infobox != nullptr) {
+        m_infobox->deleteLater();
+    }
     m_infobox = new QMessageBox(nullptr);
     m_infobox->setText(text);
     m_infobox->setWindowTitle(tr("PolicyKit Information"));
     m_infobox->setStandardButtons(QMessageBox::Ok);
-    m_infobox->setAttribute(Qt::WA_DeleteOnClose);
     m_infobox->setModal(false);
     m_infobox->show();
 }
