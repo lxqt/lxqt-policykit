@@ -29,7 +29,7 @@ find_package(Qt6  ${QT_MINIMUM_VERSION} COMPONENTS REQUIRED LinguistTools)
 find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
 find_package(PolkitQt6-1 REQUIRED)
-message(STATUS "Building with Qt${Qt5Core_VERSION}")
+message(STATUS "Building with Qt${Qt6Core_VERSION}")
 
 # Patch Version
 set(LXQT_POLKITAGENT_PATCH_VERSION 0)
