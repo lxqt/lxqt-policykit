@@ -4,28 +4,28 @@
 <context>
     <name>LXQtPolicykit::PolicykitAgent</name>
     <message>
-        <location filename="../src/policykitagent.cpp" line="85"/>
-        <location filename="../src/policykitagent.cpp" line="183"/>
+        <location filename="../src/policykitagent.cpp" line="86"/>
+        <location filename="../src/policykitagent.cpp" line="199"/>
         <source>PolicyKit Information</source>
         <translation>Informacje kontroli przywilejów PolicyKit</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="82"/>
+        <location filename="../src/policykitagent.cpp" line="83"/>
         <source>Another authentication is in progress. Please try again later.</source>
         <translation>Trwa inne uwierzytelnianie. Spróbuj ponownie później.</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="160"/>
+        <location filename="../src/policykitagent.cpp" line="174"/>
+        <source>Authentication failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/policykitagent.cpp" line="176"/>
         <source>Authorization Failed</source>
         <translation>Uwierzytelnienie nie powiodło się</translation>
     </message>
     <message>
-        <location filename="../src/policykitagent.cpp" line="160"/>
-        <source>Authorization failed for some reason</source>
-        <translation>Uwierzytelnienie nie powiodło się</translation>
-    </message>
-    <message>
-        <location filename="../src/policykitagent.cpp" line="176"/>
+        <location filename="../src/policykitagent.cpp" line="190"/>
         <source>PolicyKit Error</source>
         <translation>Błąd PolicyKit</translation>
     </message>
