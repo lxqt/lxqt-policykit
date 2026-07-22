@@ -37,7 +37,6 @@
 
 #include <QApplication>
 #include <QHash>
-#include <QMessageBox>
 
 namespace LXQtPolicykit
 {
@@ -74,8 +73,11 @@ protected:
 private:
     bool m_inProgress;
     bool m_inProgressAlert;
+    bool m_userCancelled;
+    bool m_errorShown;
+    bool m_infoShown;
+    QString m_lastError;
     PolicykitAgentGUI * m_gui;
-    QMessageBox *m_infobox;
     QHash<PolkitQt1::Agent::Session*,PolkitQt1::Identity> m_SessionIdentity;
 };
 

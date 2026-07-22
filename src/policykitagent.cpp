@@ -43,8 +43,10 @@ PolicykitAgent::PolicykitAgent(QObject *parent)
     : PolkitQt1::Agent::Listener(parent),
       m_inProgress(false),
       m_inProgressAlert(false),
-      m_gui(nullptr),
-      m_infobox(nullptr)
+      m_userCancelled(false),
+      m_errorShown(false),
+      m_infoShown(false),
+      m_gui(nullptr)
 {
     PolkitQt1::UnixSessionSubject session(getpid());
     registerListener(session, QStringLiteral("/org/lxqt/PolicyKit1/AuthenticationAgent"));
@@ -57,7 +59,6 @@ PolicykitAgent::~PolicykitAgent()
         m_gui->blockSignals(true);
         m_gui->deleteLater();
     }
-    delete m_infobox;
     deleteSessions();
 }
 
@@ -91,6 +92,10 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
         return;
     }
     m_inProgress = true;
+    m_userCancelled = false;
+    m_errorShown = false;
+    m_infoShown = false;
+    m_lastError.clear();
     deleteSessions();
 
     if (m_gui != nullptr)
@@ -133,14 +138,22 @@ void PolicykitAgent::request(const QString &request, bool echo)
     Q_ASSERT(session);
     Q_ASSERT(m_gui);
 
+    // PAM may still ask for a password after showInfo (e.g. account locked); don't.
+    if (m_infoShown) {
+        session->cancel();
+        return;
+    }
+
     PolkitQt1::Identity identity = m_SessionIdentity[session];
     m_gui->setPrompt(identity, request, echo);
     connect(m_gui, &QDialog::finished, this, [this, session] (int result)
     {
         if (result == QDialog::Accepted && m_gui->identity() == m_SessionIdentity[session].toString())
             session->setResponse(m_gui->response());
-        else
+        else {
+            m_userCancelled = true;
             session->cancel();
+        }
     });
     m_gui->show();
     m_gui->activateWindow();
@@ -155,9 +168,12 @@ void PolicykitAgent::completed(bool gainedAuthorization)
 
     if (m_inProgress && m_gui->identity() == m_SessionIdentity[session].toString())
     {
-        if (!gainedAuthorization)
+        if (!gainedAuthorization && !m_userCancelled && !m_errorShown)
         {
-            QMessageBox::information(nullptr, tr("Authorization Failed"), tr("Authorization failed for some reason"));
+            const QString text = m_lastError.isEmpty()
+                ? tr("Authentication failed")
+                : m_lastError;
+            QMessageBox::information(nullptr, tr("Authorization Failed"), text);
         }
 
         // Note: the setCompleted() must be called exacly once (as the
@@ -165,26 +181,22 @@ void PolicykitAgent::completed(bool gainedAuthorization)
         session->result()->setCompleted();
         m_inProgress = false;
     }
-    if (m_infobox != nullptr){
-      m_infobox->hide();
-      delete m_infobox;
-    }
 }
 
 void PolicykitAgent::showError(const QString &text)
 {
+    m_lastError = text;
+    m_errorShown = true;
     QMessageBox::warning(nullptr, tr("PolicyKit Error"), text);
 }
 
 void PolicykitAgent::showInfo(const QString &text)
 {
-    m_infobox = new QMessageBox(nullptr);
-    m_infobox->setText(text);
-    m_infobox->setWindowTitle(tr("PolicyKit Information"));
-    m_infobox->setStandardButtons(QMessageBox::Ok);
-    m_infobox->setAttribute(Qt::WA_DeleteOnClose);
-    m_infobox->setModal(false);
-    m_infobox->show();
+    m_lastError = text;
+    m_errorShown = true;
+    m_infoShown = true;
+    // Blocking so callers only see their error after the user dismisses this.
+    QMessageBox::information(nullptr, tr("PolicyKit Information"), text);
 }
 
 } //namespace
