@@ -17,7 +17,7 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="174"/>
         <source>Authentication failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Autenticazione non riuscita</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="176"/>
