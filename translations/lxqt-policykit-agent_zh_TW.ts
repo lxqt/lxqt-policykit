@@ -12,12 +12,12 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="83"/>
         <source>Another authentication is in progress. Please try again later.</source>
-        <translation>另有授權正在進行。請稍後再試。</translation>
+        <translation>另有驗證正在進行。請稍後再試。</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="174"/>
         <source>Authentication failed</source>
-        <translation type="unfinished"></translation>
+        <translation>驗證失敗</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="176"/>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>需要授權</translation>
+        <translation>需要驗證</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>

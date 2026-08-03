@@ -12,17 +12,17 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="83"/>
         <source>Another authentication is in progress. Please try again later.</source>
-        <translation>Er is momenteel een andere authenticatie bezig. Probeer het later nog eens.</translation>
+        <translation>Er is momenteel een andere verificatie bezig. Probeer het later opnieuw.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="174"/>
         <source>Authentication failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Verificatie mislukt</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="176"/>
         <source>Authorization Failed</source>
-        <translation>Authenticatie mislukt</translation>
+        <translation>Verificatie mislukt</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="190"/>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/policykitagentgui.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>Authenticatie vereist</translation>
+        <translation>Verificatie vereist</translation>
     </message>
     <message>
         <location filename="../src/policykitagentgui.ui" line="55"/>

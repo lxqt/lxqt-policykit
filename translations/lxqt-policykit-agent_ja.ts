@@ -17,12 +17,12 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="174"/>
         <source>Authentication failed</source>
-        <translation type="unfinished"></translation>
+        <translation>認証に失敗しました</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="176"/>
         <source>Authorization Failed</source>
-        <translation>認証失敗</translation>
+        <translation>認証に失敗しました</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="190"/>
