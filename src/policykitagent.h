@@ -67,16 +67,20 @@ public slots:
     void showError(const QString &text);
     void showInfo(const QString &text);
 
-protected:
+private:
+    void createSession(const PolkitQt1::Identity &identity,
+                       const QString &cookie,
+                       PolkitQt1::Agent::AsyncResult *result);
     void deleteSessions();
 
-private:
     bool m_inProgress;
     bool m_inProgressAlert;
     bool m_userCancelled;
     bool m_errorShown;
     bool m_infoShown;
+    int m_authenticationAttempts;
     QString m_lastError;
+    QString m_cookie;
     PolicykitAgentGUI * m_gui;
     QHash<PolkitQt1::Agent::Session*,PolkitQt1::Identity> m_SessionIdentity;
 };
