@@ -12,17 +12,17 @@
     <message>
         <location filename="../src/policykitagent.cpp" line="83"/>
         <source>Another authentication is in progress. Please try again later.</source>
-        <translation>Một xác thực khác đang được thực thi. Vui lòng thử lại sau.</translation>
+        <translation>Một Xác thực Khác Đang Thực hiện. Vui lòng Thử lại Sau.</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="174"/>
         <source>Authentication failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Xác thực Thất bại</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="176"/>
         <source>Authorization Failed</source>
-        <translation>Xác thực Thất bại</translation>
+        <translation>Ủy quyền Thất bại</translation>
     </message>
     <message>
         <location filename="../src/policykitagent.cpp" line="190"/>
