@@ -102,6 +102,11 @@ target_link_libraries(lxqt-policykit-agent
     ${POLKIT_AGENT_LDFLAGS}
 )
 
+target_compile_options(lxqt-policykit-agent
+    PRIVATE
+        "$<$<CXX_COMPILER_ID:Clang>:-Wno-c2y-extensions>"
+)
+
 # install
 install(TARGETS
     lxqt-policykit-agent
