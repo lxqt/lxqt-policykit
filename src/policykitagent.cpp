@@ -39,6 +39,11 @@
 namespace LXQtPolicykit
 {
 
+namespace
+{
+constexpr int maximumAuthenticationAttempts = 3;
+}
+
 PolicykitAgent::PolicykitAgent(QObject *parent)
     : PolkitQt1::Agent::Listener(parent),
       m_inProgress(false),
@@ -46,6 +51,7 @@ PolicykitAgent::PolicykitAgent(QObject *parent)
       m_userCancelled(false),
       m_errorShown(false),
       m_infoShown(false),
+      m_authenticationAttempts(0),
       m_gui(nullptr)
 {
     PolkitQt1::UnixSessionSubject session(getpid());
@@ -67,6 +73,19 @@ void PolicykitAgent::deleteSessions()
     for (auto i = m_SessionIdentity.begin(), i_e = m_SessionIdentity.end(); i != i_e; ++i)
         delete i.key();
     m_SessionIdentity.clear();
+}
+
+void PolicykitAgent::createSession(const PolkitQt1::Identity &identity,
+                                   const QString &cookie,
+                                   PolkitQt1::Agent::AsyncResult *result)
+{
+    auto *session = new PolkitQt1::Agent::Session(identity, cookie, result);
+    m_SessionIdentity[session] = identity;
+    connect(session, &PolkitQt1::Agent::Session::request, this, &PolicykitAgent::request);
+    connect(session, &PolkitQt1::Agent::Session::completed, this, &PolicykitAgent::completed);
+    connect(session, &PolkitQt1::Agent::Session::showError, this, &PolicykitAgent::showError);
+    connect(session, &PolkitQt1::Agent::Session::showInfo, this, &PolicykitAgent::showInfo);
+    session->initiate();
 }
 
 
@@ -95,7 +114,9 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
     m_userCancelled = false;
     m_errorShown = false;
     m_infoShown = false;
+    m_authenticationAttempts = 0;
     m_lastError.clear();
+    m_cookie = cookie;
     deleteSessions();
 
     if (m_gui != nullptr)
@@ -107,15 +128,7 @@ void PolicykitAgent::initiateAuthentication(const QString &actionId,
 
     for(const PolkitQt1::Identity& i : identities)
     {
-        PolkitQt1::Agent::Session *session;
-        session = new PolkitQt1::Agent::Session(i, cookie, result);
-        Q_ASSERT(session);
-        m_SessionIdentity[session] = i;
-        connect(session, &PolkitQt1::Agent::Session::request, this, &PolicykitAgent::request);
-        connect(session, &PolkitQt1::Agent::Session::completed, this, &PolicykitAgent::completed);
-        connect(session, &PolkitQt1::Agent::Session::showError, this, &PolicykitAgent::showError);
-        connect(session, &PolkitQt1::Agent::Session::showInfo, this, &PolicykitAgent::showInfo);
-        session->initiate();
+        createSession(i, cookie, result);
     }
 }
 
@@ -123,6 +136,7 @@ bool PolicykitAgent::initiateAuthenticationFinish()
 {
     // dunno what are those for...
     m_inProgress = false;
+    m_cookie.clear();
     return true;
 }
 
@@ -130,6 +144,7 @@ void PolicykitAgent::cancelAuthentication()
 {
     // dunno what are those for...
     m_inProgress = false;
+    m_cookie.clear();
 }
 
 void PolicykitAgent::request(const QString &request, bool echo)
@@ -146,15 +161,20 @@ void PolicykitAgent::request(const QString &request, bool echo)
 
     PolkitQt1::Identity identity = m_SessionIdentity[session];
     m_gui->setPrompt(identity, request, echo);
-    connect(m_gui, &QDialog::finished, this, [this, session] (int result)
+    connect(m_gui, &QDialog::finished, session, [this, session] (int result)
     {
-        if (result == QDialog::Accepted && m_gui->identity() == m_SessionIdentity[session].toString())
-            session->setResponse(m_gui->response());
+        if (result == QDialog::Accepted)
+        {
+            if (m_gui->identity() == m_SessionIdentity[session].toString())
+                session->setResponse(m_gui->response());
+            else
+                session->cancel();
+        }
         else {
             m_userCancelled = true;
             session->cancel();
         }
-    });
+    }, Qt::SingleShotConnection);
     m_gui->show();
     m_gui->activateWindow();
     m_gui->raise();
@@ -166,8 +186,26 @@ void PolicykitAgent::completed(bool gainedAuthorization)
     Q_ASSERT(session);
     Q_ASSERT(m_gui);
 
-    if (m_inProgress && m_gui->identity() == m_SessionIdentity[session].toString())
+    const PolkitQt1::Identity identity = m_SessionIdentity.value(session);
+    const bool selectedIdentity = m_gui->identity() == identity.toString();
+    PolkitQt1::Agent::AsyncResult *result = session->result();
+
+    if (m_inProgress && selectedIdentity)
     {
+        if (!gainedAuthorization && !m_userCancelled && !m_infoShown
+            && ++m_authenticationAttempts < maximumAuthenticationAttempts)
+        {
+            if (!m_errorShown)
+                QMessageBox::information(nullptr, tr("Authorization Failed"), tr("Authentication failed. Please try again."));
+
+            m_errorShown = false;
+            m_infoShown = false;
+            m_lastError.clear();
+            // A completed Polkit session cannot be reused; start a new PAM conversation.
+            createSession(identity, m_cookie, result);
+            return;
+        }
+
         if (!gainedAuthorization && !m_userCancelled && !m_errorShown)
         {
             const QString text = m_lastError.isEmpty()
@@ -178,8 +216,9 @@ void PolicykitAgent::completed(bool gainedAuthorization)
 
         // Note: the setCompleted() must be called exacly once (as the
         // AsyncResult is shared by all the sessions)
-        session->result()->setCompleted();
+        result->setCompleted();
         m_inProgress = false;
+        m_cookie.clear();
     }
 }
 
